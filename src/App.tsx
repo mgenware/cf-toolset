@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HTMLStringApp from './toolset/html-string/main';
-import './App.css';
 
 class App extends React.Component {
   render() {
