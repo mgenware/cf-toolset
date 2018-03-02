@@ -1,4 +1,6 @@
 import BaseEncoderView from '../_baseEncoderView/main';
+import { app } from '../base';
+import Lang from './lang';
 
 export default class HtmlString extends BaseEncoderView {
   encodeOverride(src: string): string {
@@ -10,6 +12,6 @@ export default class HtmlString extends BaseEncoderView {
   }
 
   title(): string {
-    return 'URL';
+    return app.localizedDic(Lang).title;
   }
 }
