@@ -8,7 +8,7 @@ class App extends React.Component {
 <BrowserRouter>
   <div className="App">
     <ul>
-      <li><Link to="/html-string">HTML String</Link></li>
+      <li><Link to="/html-string">HTML String Encoder/Decoder</Link></li>
     </ul>
     <hr />
     <Route exact={true} path="/html-string" component={HTMLStringApp} />
