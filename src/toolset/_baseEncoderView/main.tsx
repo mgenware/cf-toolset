@@ -9,7 +9,8 @@ interface State {
 }
 
 export default class BaseEncoderView extends React.Component<object, State> {
-  ls: {[id: string]: string};
+  private ls: {[id: string]: string};
+  private codeView: CodeView|null;
 
   constructor(props: object) {
     super(props);
@@ -35,7 +36,10 @@ export default class BaseEncoderView extends React.Component<object, State> {
   <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleDecode}>{this.ls.decode}</button>
   <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this.ls.swap}</button>
   <h2 className="mt-4">{this.ls.output}</h2>
-  <CodeView content={this.state.dest}/>
+  <CodeView
+    content={this.state.dest}
+    ref={(input) => this.codeView = input} 
+  />
 </div>
     );
   }
@@ -52,6 +56,8 @@ export default class BaseEncoderView extends React.Component<object, State> {
     const { state } = this;
     this.setState({
       dest: this.encodeOverride(state.src),
+    }, () => {
+      this.selectCodeEditor();
     });
   }
 
@@ -59,6 +65,8 @@ export default class BaseEncoderView extends React.Component<object, State> {
     const { state } = this;
     this.setState({
       dest: this.decodeOverride(state.src),
+    }, () => {
+      this.selectCodeEditor();
     });
   }
 
@@ -68,5 +76,11 @@ export default class BaseEncoderView extends React.Component<object, State> {
       src: state.dest,
       dest: state.src,
     });
+  }
+
+  private selectCodeEditor = () => {
+    if (this.codeView) {
+      this.codeView.selectAll();
+    }
   }
 }

@@ -25,6 +25,12 @@ export class CodeView extends React.Component<CodeViewProps, {}> {
 />
     );
   }
+
+  selectAll() {
+    if (this.textarea) {
+      this.textarea.select();
+    }
+  }
 }
 
 export interface CodeEditorProps {
@@ -34,6 +40,8 @@ export interface CodeEditorProps {
 }
 
 export class CodeEditor extends React.Component<CodeEditorProps, {}> {
+  private textarea: HTMLTextAreaElement|null;
+
   constructor(props: CodeEditorProps) {
     super(props);
   }
@@ -47,8 +55,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, {}> {
   rows={10}
   onChange={(e) => props.onChange(e.target.value)}
   value={props.content}
+  ref={(input) => this.textarea = input} 
 />
     );
   }
-
 }
