@@ -12,6 +12,6 @@ export default class HtmlString extends BaseEncoderView {
   }
 
   title(): string {
-    return app.localizedDic(Lang).title;
+    return app.localizedMap(Lang).title;
   }
 }

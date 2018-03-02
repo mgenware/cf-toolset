@@ -15,7 +15,7 @@ export default class BaseEncoderView extends React.Component<object, State> {
   constructor(props: object) {
     super(props);
 
-    this.ls = app.localizedDic(Lang);
+    this.ls = app.localizedMap(Lang);
     this.state = {
       src: '',
       dest: '',
