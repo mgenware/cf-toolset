@@ -2,7 +2,7 @@ import BaseEncoderView from '../_baseEncoderView/main';
 import { XmlEntities } from 'html-entities';
 const entities = new XmlEntities();
 
-export default class HtmlString extends BaseEncoderView {
+export default class XmlString extends BaseEncoderView {
   encodeOverride(src: string): string {
     return entities.encode(src);
   }
