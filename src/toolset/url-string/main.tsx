@@ -8,4 +8,8 @@ export default class HtmlString extends BaseEncoderView {
   decodeOverride(src: string): string {
     return decodeURIComponent(src);
   }
+
+  title(): string {
+    return 'URL';
+  }
 }

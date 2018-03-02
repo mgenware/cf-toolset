@@ -27,6 +27,7 @@ export default class BaseEncoderView extends React.Component<object, State> {
 
     return (
 <div className="container">
+  <h2>{this.title()}</h2>
   <CodeEditor
     autoFocus={true}
     content={state.src}
@@ -50,6 +51,10 @@ export default class BaseEncoderView extends React.Component<object, State> {
 
   decodeOverride(src: string): string {
     throw new Error('Not implemented');
+  }
+
+  title(): string {
+    return '';
   }
 
   private handleEncode = () => {

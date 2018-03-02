@@ -10,4 +10,8 @@ export default class XmlString extends BaseEncoderView {
   decodeOverride(src: string): string {
     return entities.decode(src);
   }
+
+  title(): string {
+    return 'XML';
+  }
 }
