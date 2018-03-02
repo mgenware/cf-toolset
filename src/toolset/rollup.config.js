@@ -3,8 +3,8 @@ import uglify from 'rollup-plugin-uglify';
 
 export default {
   input: 'main.tsx',
-  moduleName: 'main',
   output: {
+    name: 'main',
     file: './dist/bundle.js',
     format: 'iife',
   },

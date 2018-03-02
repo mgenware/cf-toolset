@@ -8,7 +8,8 @@
   },
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-  },
-  "dependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "m-fs": "^1.0.3"
+  }
 }
