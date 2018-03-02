@@ -24,9 +24,12 @@ export default class HTMLStringApp extends React.Component<object, State> {
   }
 
   render() {
+    const { state } = this;
+
     return (
 <div className="container">
   <CodeEditor
+    content={state.src}
     onChange={(content) => this.setState({src: content})}
   />
   <button type="button" className="btn btn-light mt-4" onClick={this.handleEncode}>{this.ls.encode}</button>

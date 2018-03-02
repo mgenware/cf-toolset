@@ -29,6 +29,7 @@ export class CodeView extends React.Component<CodeViewProps, {}> {
 
 export interface CodeEditorProps {
   autoFocus?: boolean;
+  content?: string;
   onChange: (content: string) => void;
 }
 
@@ -45,6 +46,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, {}> {
   className="form-control cft-code-edit"
   rows={10}
   onChange={(e) => props.onChange(e.target.value)}
+  value={props.content}
 />
     );
   }
