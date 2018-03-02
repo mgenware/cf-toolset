@@ -29,8 +29,9 @@ export default class HTMLStringApp extends React.Component<object, State> {
   <CodeEditor
     onChange={(content) => this.setState({src: content})}
   />
-  <button type="button" className="btn btn-success mt-4" onClick={this.handleEncode}>{this.ls.encode}</button>
-  <button type="button" className="btn btn-success mt-4" onClick={this.handleDecode}>{this.ls.decode}</button>
+  <button type="button" className="btn btn-light mt-4" onClick={this.handleEncode}>{this.ls.encode}</button>
+  <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleDecode}>{this.ls.decode}</button>
+  <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this.ls.swap}</button>
   <h2 className="mt-4">{this.ls.output}</h2>
   <CodeView content={this.state.dest}/>
 </div>
@@ -48,6 +49,14 @@ export default class HTMLStringApp extends React.Component<object, State> {
     const { state } = this;
     this.setState({
       dest: entities.decode(state.src),
+    });
+  }
+
+  private handleSwap = () => {
+    const { state } = this;
+    this.setState({
+      src: state.dest,
+      dest: state.src,
     });
   }
 }
