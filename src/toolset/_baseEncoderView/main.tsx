@@ -27,6 +27,7 @@ export default class BaseEncoderView extends React.Component<object, State> {
     return (
 <div className="container">
   <CodeEditor
+    autoFocus={true}
     content={state.src}
     onChange={(content) => this.setState({src: content})}
   />
