@@ -12,7 +12,15 @@ export default {
   },
   external: ['react', 'bootstrap'],
 	plugins: [
-    typescript({ cacheRoot: (require('unique-temp-dir'))() }),
+    typescript({
+      cacheRoot: (require('unique-temp-dir'))(),
+      tsconfigOverride: {
+        compilerOptions: { 
+          declaration: false,
+          jsx: 'react',
+        },
+      },
+    }),
     uglify(),
     postcss(),
 	]

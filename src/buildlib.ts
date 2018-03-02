@@ -7,7 +7,7 @@ const execAsync = util.promisify(exec);
 /* tslint:disable no-console */
 /* tslint:disable max-line-length */
 (async () => {
-  const toolsetPath = nodepath.resolve('../src/toolset');
+  const toolsetPath = nodepath.resolve('./toolset');
   const entryNames = (await mfs.listSubDirs(toolsetPath))
     .filter((dir) => !dir.startsWith('_'));
 
@@ -16,7 +16,6 @@ const execAsync = util.promisify(exec);
 
   const promises = entryNames.map(async (name) => {
     const cmd = `cd "${toolsetPath}" && rollup -c rollup.config.js -i "${name}/main.tsx" -o "${name}/dist/bundle.js"`;
-    console.log(cmd);
     return await execAsync(cmd);
   });
   await Promise.all(promises);
