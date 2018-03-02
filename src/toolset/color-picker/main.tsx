@@ -3,7 +3,7 @@ import { ChromePicker, ColorResult, Color, PhotoshopPicker, HuePicker, AlphaPick
 const rgbToHex = require('rgb-hex');
 
 interface State {
-  color: ColorResult|string;
+  color: ColorResult;
 
   rgbHex?: string;
   rgbaHex?: string;
@@ -18,8 +18,26 @@ export default class ColorPicker extends React.Component<object, State> {
     super(props);
 
     this.state = {
-      color: '#A51F21',
+      color: {
+        hex: '#333333',
+        rgb: {
+          r: 51,
+          g: 51,
+          b: 51,
+          a: 1,
+        },
+        hsl: {
+          h: 0,
+          s: 0,
+          l: .10,
+          a: 1,
+        },
+      },
     };
+  }
+
+  componentDidMount() {
+    this.formatColor();
   }
 
   render() {
@@ -95,12 +113,18 @@ export default class ColorPicker extends React.Component<object, State> {
   }
 
   private handleChangeComplete = (color: ColorResult) => {
+    this.setState({
+      color: color,
+    });
+  }
+
+  private formatColor() {
+    const { color } = this.state;
     const { rgb, hsl } = color;
     const h = Math.round(hsl.h);
     const s = Math.round(hsl.s * 100);
     const l = Math.round(hsl.l * 100);
     this.setState({
-      color: color,
       rgbHex: '#' + rgbToHex(rgb.r, rgb.g, rgb.b),
       rgbaHex: '#' + rgbToHex(rgb.r, rgb.g, rgb.b, rgb.a),
       rgbCss: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
