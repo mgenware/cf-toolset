@@ -9,6 +9,8 @@ interface State {
   rgbaHex?: string;
   rgbCss?: string;
   rgbaCss?: string;
+  hslCss?: string;
+  hslaCss?: string;
 }
 
 export default class ColorPicker extends React.Component<object, State> {
@@ -49,6 +51,16 @@ export default class ColorPicker extends React.Component<object, State> {
     <kbd>CSS</kbd>
     <code className="ml-2">{state.rgbaCss}</code>
   </p>
+  <h2>HSL</h2>
+  <p>
+    <kbd>CSS</kbd>
+    <code className="ml-2">{state.hslCss}</code>
+  </p>
+  <h2>HSLA</h2>
+  <p>
+    <kbd>CSS</kbd>
+    <code className="ml-2">{state.hslaCss}</code>
+  </p>
   <div className="row">
     <div className="col-sm-auto">
       <ChromePicker
@@ -83,13 +95,18 @@ export default class ColorPicker extends React.Component<object, State> {
   }
 
   private handleChangeComplete = (color: ColorResult) => {
-    const { rgb } = color;
+    const { rgb, hsl } = color;
+    const h = Math.round(hsl.h);
+    const s = Math.round(hsl.s * 100);
+    const l = Math.round(hsl.l * 100);
     this.setState({
       color: color,
       rgbHex: '#' + rgbToHex(rgb.r, rgb.g, rgb.b),
       rgbaHex: '#' + rgbToHex(rgb.r, rgb.g, rgb.b, rgb.a),
       rgbCss: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
       rgbaCss: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+      hslCss: `hsl(${h}, ${s}, ${l})`,
+      hslaCss: `hsla(${h}, ${s}, ${l}, ${rgb.a})`,
     });
   }
 }
