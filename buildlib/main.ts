@@ -15,7 +15,8 @@ const execAsync = util.promisify(exec);
   console.log(entryNames);
 
   const promises = entryNames.map(async (name) => {
-    const cmd = `cd "${toolsetPath}" && rollup -c rollup.config.js -i "${name}/main.tsx" -o "${name}/dist/bundle.js"`;
+    const distFile = nodepath.join(__dirname, `dist/${name}.prod.js`);
+    const cmd = `cd "${toolsetPath}" && rollup -c rollup.config.js -i "${name}/main.tsx" -o "${distFile}"`;
     console.log(cmd);
     return await execAsync(cmd);
   });
