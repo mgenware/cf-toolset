@@ -1,6 +1,7 @@
 import './_app/app.css';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'react';
+import 'react-dom';
 
 // base controls
 import './_app/controls';

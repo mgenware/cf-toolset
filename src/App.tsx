@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HTMLStringApp from './toolset/html-string/main';
 import XMLStringApp from './toolset/xml-string/main';
 import URLStringApp from './toolset/url-string/main';
