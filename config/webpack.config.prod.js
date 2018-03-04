@@ -59,6 +59,9 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: {
     'html-string': './src/entries/html-string.tsx',
+    'xml-string': './src/entries/xml-string.tsx',
+    'url-string': './src/entries/url-string.tsx',
+    'color-picker': './src/entries/color-picker.tsx',
   },
   output: {
     // The build folder.
