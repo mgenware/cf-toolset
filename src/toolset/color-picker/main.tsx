@@ -115,6 +115,8 @@ export default class ColorPicker extends React.Component<object, State> {
   private handleChangeComplete = (color: ColorResult) => {
     this.setState({
       color: color,
+    }, () => {
+      this.formatColor();
     });
   }
 
