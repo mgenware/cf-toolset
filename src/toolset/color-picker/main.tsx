@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ChromePicker, ColorResult, Color, PhotoshopPicker, HuePicker, AlphaPicker } from 'react-color';
-const rgbToHex = require('rgb-hex');
+const rgbToHex = require('./rgb-hex');
 
 interface State {
   color: ColorResult;
