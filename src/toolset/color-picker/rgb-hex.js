@@ -5,7 +5,6 @@ module.exports = function (red, green, blue, alpha) {
 
 	if (typeof red === 'string') {
 		const res = red.match(/(0?\.?\d{1,3})%?\b/g).map(Number);
-		// TODO: use destructuring when targeting Node.js 6
 		red = res[0];
 		green = res[1];
 		blue = res[2];
