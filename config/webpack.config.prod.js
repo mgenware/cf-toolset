@@ -58,7 +58,6 @@ module.exports = {
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
   entry: {
-    cft: './src/toolset/base.ts',
     'html-string': './src/entries/html-string.tsx',
   },
   output: {
@@ -301,15 +300,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: cssFilename,
       allChunks: false,
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "cft",
-      // filename: "cft.js"
-      // (Give the chunk a different name)
-  
-      minChunks: Infinity,
-      // (with more entries, this ensures that no other module
-      //  goes into the vendor chunk)
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
