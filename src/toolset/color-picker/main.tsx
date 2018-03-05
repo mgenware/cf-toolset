@@ -51,34 +51,46 @@ export default class ColorPicker extends React.Component<object, State> {
 
     return (
 <div className="container">
-  <h2>RGB</h2>
-  <p>
-    <kbd>Hex</kbd>
-    <code className="ml-2">{state.rgbHex}</code>
-  </p>
-  <p>
-    <kbd>CSS</kbd>
-    <code className="ml-2">{state.rgbCss}</code>
-  </p>
-  <h2>RGBA</h2>
-  <p>
-    <kbd>Hex</kbd>
-    <code className="ml-2">{state.rgbaHex}</code>
-  </p>
-  <p>
-    <kbd>CSS</kbd>
-    <code className="ml-2">{state.rgbaCss}</code>
-  </p>
-  <h2>HSL</h2>
-  <p>
-    <kbd>CSS</kbd>
-    <code className="ml-2">{state.hslCss}</code>
-  </p>
-  <h2>HSLA</h2>
-  <p>
-    <kbd>CSS</kbd>
-    <code className="ml-2">{state.hslaCss}</code>
-  </p>
+  <div className="row">
+    <div className="col-md">
+      <h2>RGB</h2>
+      <p>
+        <kbd>Hex</kbd>
+        <code className="ml-2">{state.rgbHex}</code>
+      </p>
+      <p>
+        <kbd>CSS</kbd>
+        <code className="ml-2">{state.rgbCss}</code>
+      </p>
+    </div>
+    <div className="col-md">
+      <h2>RGBA</h2>
+      <p>
+        <kbd>Hex</kbd>
+        <code className="ml-2">{state.rgbaHex}</code>
+      </p>
+      <p>
+        <kbd>CSS</kbd>
+        <code className="ml-2">{state.rgbaCss}</code>
+      </p>
+    </div>
+  </div>
+  <div className="row">
+    <div className="col-md">
+        <h2>HSL</h2>
+        <p>
+          <kbd>CSS</kbd>
+          <code className="ml-2">{state.hslCss}</code>
+        </p>
+      </div>
+      <div className="col-md">
+        <h2>HSLA</h2>
+        <p>
+          <kbd>CSS</kbd>
+          <code className="ml-2">{state.hslaCss}</code>
+        </p>
+      </div>
+    </div>
   <div className="row">
     <div className="col-sm-auto">
       <ChromePicker
@@ -93,20 +105,18 @@ export default class ColorPicker extends React.Component<object, State> {
         onChangeComplete={this.handleChangeComplete}
       />
     </div>
-    <div className="col-sm-auto">
-      <div>
-        <HuePicker
-          color={color}
-          onChangeComplete={this.handleChangeComplete}
-        />
-      </div>
-      <div>
-        <AlphaPicker
-          color={color}
-          onChangeComplete={this.handleChangeComplete}
-        />
-      </div>
-    </div>
+  </div>
+  <div className="mt-3">
+    <HuePicker
+      color={color}
+      onChangeComplete={this.handleChangeComplete}
+    />
+  </div>
+  <div className="mt-3 pb-4">
+    <AlphaPicker
+      color={color}
+      onChangeComplete={this.handleChangeComplete}
+    />
   </div>
 </div>
     );
