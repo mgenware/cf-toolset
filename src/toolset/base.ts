@@ -7,4 +7,4 @@ import 'react-dom';
 import './_app/controls';
 import './_baseEncoderView/main';
 
-export { default as app } from './_app/app';
+export { default as app } from './common/app';

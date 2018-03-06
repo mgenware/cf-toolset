@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { app } from '../base';
+import { app } from '../../base';
 import Lang from './lang';
-import { CodeView, CodeEditor } from '../_app/controls';
+import { CodeView, CodeEditor } from '../controls';
 
 interface State {
   src: string;

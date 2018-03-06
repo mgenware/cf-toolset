@@ -1,4 +1,4 @@
-import BaseEncoderView from '../_baseEncoderView/main';
+import BaseEncoderView from '../common/baseEncoderView/main';
 import { app } from '../base';
 import Lang from './lang';
 
