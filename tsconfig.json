@@ -15,6 +15,7 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "baseUrl": ".",
