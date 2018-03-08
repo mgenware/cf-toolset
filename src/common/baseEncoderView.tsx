@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { app } from '../../base';
-import Lang from './lang';
-import { CodeView, CodeEditor } from '../controls';
+import app from 'common/app';
+import { CodeView, CodeEditor } from 'common/controls';
 
 interface State {
   src: string;
@@ -15,7 +14,7 @@ export default class BaseEncoderView extends React.Component<object, State> {
   constructor(props: object) {
     super(props);
 
-    this.ls = app.localizedMap(Lang);
+    this.ls = app.localizedMap(localizedStrings());
     this.state = {
       src: '',
       dest: '',
@@ -88,4 +87,16 @@ export default class BaseEncoderView extends React.Component<object, State> {
       this.codeView.selectAll();
     }
   }
+}
+
+function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
+  return {
+    en: {
+      title: 'URL string',
+    },
+  
+    cn: {
+      title: 'URL 字符串',
+    }
+  };
 }

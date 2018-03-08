@@ -1,4 +1,4 @@
-import BaseEncoderView from '../common/baseEncoderView/main';
+import BaseEncoderView from 'common/baseEncoderView';
 import { AllHtmlEntities } from 'html-entities';
 const entities = new AllHtmlEntities();
 
