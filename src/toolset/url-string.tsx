@@ -15,3 +15,15 @@ export default class HtmlString extends BaseEncoderView {
     return app.localizedMap(Lang).title;
   }
 }
+
+function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
+  return {
+    en: {
+      title: 'URL string',
+    },
+  
+    cn: {
+      title: 'URL 字符串',
+    }
+  };
+}

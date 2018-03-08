@@ -1,3 +1,5 @@
+import './app.css';
+
 export class App {
   browserLang(): string {
     return window.navigator.language;
