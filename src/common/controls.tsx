@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../base';
 import * as $ from 'jquery';
 
 function execCopyCommand(): boolean {

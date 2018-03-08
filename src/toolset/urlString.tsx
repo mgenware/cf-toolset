@@ -1,4 +1,4 @@
-import BaseEncoderView from '../common/baseEncoderView/main';
+import BaseEncoderView from 'common/baseEncoderView';
 import app from 'common/app';
 
 export default class HtmlString extends BaseEncoderView {

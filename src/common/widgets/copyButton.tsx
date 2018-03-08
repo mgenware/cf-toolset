@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../base';
+import app from 'common/app';
 import * as $ from 'jquery';
 
 export interface Props {
@@ -13,7 +13,7 @@ export class CopyButton extends React.Component<Props, object> {
   constructor(props: Props) {
     super(props);
 
-    this.ls = app.localizedMap(Lang);
+    this.ls = app.localizedMap(localizedStrings());
   }
 
   render() {
@@ -29,7 +29,7 @@ export class CopyButton extends React.Component<Props, object> {
   data-trigger="manual"
   disabled={props.disabled}
   ref={(input) => this.btnCopy = input}>
-
+  {this.ls.copy}
 </button>
     );
   }
@@ -38,17 +38,13 @@ export class CopyButton extends React.Component<Props, object> {
 function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
   return {
     en: {
-      encode: 'Encode',
-      decode: 'Decode',
-      output: 'Output',
-      swap: 'Swap',
+      copy: 'Copy',
+      copied: 'Copied',
     },
   
     cn: {
-      encode: '编码',
-      decode: '解码',
-      output: '输出',
-      swap: '交换',
+      copy: '复制',
+      copied: '复制完毕',
     }
   };
 }

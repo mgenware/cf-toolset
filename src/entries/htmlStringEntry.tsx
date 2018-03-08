@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from '../toolset/url-string/main';
+import App from 'toolset/htmlString';
 
 ReactDOM.render(
   <App />,
-  document.getElementById('cft-url-string-app'),
+  document.getElementById('cft-html-string-app'),
 );

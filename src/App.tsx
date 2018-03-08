@@ -2,10 +2,10 @@ import * as React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HTMLStringApp from './toolset/html-string/main';
-import XMLStringApp from './toolset/xml-string/main';
-import URLStringApp from './toolset/url-string/main';
-import ColorPickerApp from './toolset/color-picker/main';
+import HTMLStringApp from 'toolset/htmlString';
+import XMLStringApp from 'toolset/xmlString';
+import URLStringApp from 'toolset/urlString';
+import ColorPickerApp from 'toolset/colorPicker';
 
 class App extends React.Component {
   render() {
