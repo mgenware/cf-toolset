@@ -58,10 +58,10 @@ module.exports = {
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
   entry: {
-    'html-string': './src/entries/htmlString.tsx',
-    'xml-string': './src/entries/xmlString.tsx',
-    'url-string': './src/entries/urlString.tsx',
-    'color-picker': './src/entries/colorPicker.tsx',
+    'html-string': './src/entries/htmlStringEntry.tsx',
+    'xml-string': './src/entries/xmlStringEntry.tsx',
+    'url-string': './src/entries/urlStringEntry.tsx',
+    'color-picker': './src/entries/colorPickerEntry.tsx',
   },
   output: {
     // The build folder.
