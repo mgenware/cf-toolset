@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ChromePicker, ColorResult, Color, PhotoshopPicker, HuePicker, AlphaPicker } from 'react-color';
+import InlineCodeView from 'common/widgets/inlineCodeView';
 const rgbToHex = require('lib/rgb-hex');
 
 interface State {
@@ -56,22 +57,30 @@ export default class ColorPicker extends React.Component<object, State> {
       <h2>RGB</h2>
       <p>
         <kbd>Hex</kbd>
-        <code className="ml-2">{state.rgbHex}</code>
+        <span className="ml-2">
+          <InlineCodeView content={state.rgbHex} />
+        </span>
       </p>
       <p>
         <kbd>CSS</kbd>
-        <code className="ml-2">{state.rgbCss}</code>
+        <span className="ml-2">
+          <InlineCodeView content={state.rgbCss} />
+        </span>
       </p>
     </div>
     <div className="col-md">
       <h2>RGBA</h2>
       <p>
         <kbd>Hex</kbd>
-        <code className="ml-2">{state.rgbaHex}</code>
+        <span className="ml-2">
+          <InlineCodeView content={state.rgbaHex} />
+        </span>
       </p>
       <p>
         <kbd>CSS</kbd>
-        <code className="ml-2">{state.rgbaCss}</code>
+        <span className="ml-2">
+          <InlineCodeView content={state.rgbaCss} />
+        </span>
       </p>
     </div>
   </div>
@@ -80,14 +89,18 @@ export default class ColorPicker extends React.Component<object, State> {
         <h2>HSL</h2>
         <p>
           <kbd>CSS</kbd>
-          <code className="ml-2">{state.hslCss}</code>
+          <span className="ml-2">
+            <InlineCodeView content={state.hslCss} />
+          </span>
         </p>
       </div>
       <div className="col-md">
         <h2>HSLA</h2>
         <p>
           <kbd>CSS</kbd>
-          <code className="ml-2">{state.hslaCss}</code>
+          <span className="ml-2">
+            <InlineCodeView content={state.hslaCss} />
+          </span>
         </p>
       </div>
     </div>
