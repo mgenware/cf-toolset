@@ -4,6 +4,7 @@ import * as $ from 'jquery';
 
 export interface Props {
   disabled?: boolean;
+  style?: string;
   selectHandler: () => boolean;
 }
 
@@ -22,7 +23,7 @@ export default class CopyButton extends React.Component<Props, object> {
     return (
 <button 
   type="button"
-  className="btn btn-info btn-sm"
+  className={`btn btn-sm btn-${props.style || 'info'}`}
   onClick={this.handleCopyClick}
   data-toggle="tooltip"
   data-placement="top"
