@@ -1,9 +1,5 @@
 import * as React from 'react';
-import * as $ from 'jquery';
-
-function execCopyCommand(): boolean {
-  return document.execCommand('copy');
-}
+import CopyButton from './widgets/copyButton';
 
 export interface CodeViewProps {
   content?: string;
@@ -11,7 +7,6 @@ export interface CodeViewProps {
 
 export class CodeView extends React.Component<CodeViewProps, {}> {
   private textarea: HTMLTextAreaElement|null;
-  private btnCopy: HTMLButtonElement|null;
 
   constructor(props: CodeViewProps) {
     super(props);
@@ -21,19 +16,7 @@ export class CodeView extends React.Component<CodeViewProps, {}> {
     const { props } = this;
     return (
 <div>
-  <button 
-    type="button"
-    className="btn btn-info btn-sm"
-    onClick={this.handleCopyClick}
-    data-toggle="tooltip"
-    data-placement="top"
-    data-title="Copied"
-    data-trigger="manual"
-    disabled={!props.content}
-    ref={(input) => this.btnCopy = input} 
-  >
-    Copy
-  </button>
+  <CopyButton disabled={!props.content} selectHandler={this.handleCopySelection} />
   <textarea
     className="cft-code-view mt-2"
     readOnly={true}
@@ -54,17 +37,8 @@ export class CodeView extends React.Component<CodeViewProps, {}> {
     return false;
   }
 
-  private handleCopyClick = () => {
-    if (this.selectAll() && execCopyCommand() && this.btnCopy) {
-      // show bootstrap tooltip
-      const btn = this.btnCopy;
-      // tslint:disable-next-line no-any
-      ($(btn) as any).tooltip('show');
-      setTimeout(() => {
-        // tslint:disable-next-line no-any
-        ($(btn) as any).tooltip('hide');
-      }, 800);
-    }
+  private handleCopySelection = () => {
+    return this.selectAll();
   }
 }
 
