@@ -92,11 +92,18 @@ export default class BaseEncoderView extends React.Component<object, State> {
 function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
   return {
     en: {
-      title: 'URL string',
+      encode: 'Encode',
+      decode: 'Decode',
+      output: 'Output',
+      swap: 'Swap',
     },
   
     cn: {
-      title: 'URL 字符串',
+      encode: '编码',
+      decode: '解码',
+      output: '输出',
+      swap: '交换',
     }
   };
+  
 }
