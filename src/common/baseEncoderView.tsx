@@ -105,5 +105,4 @@ function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
       swap: '交换',
     }
   };
-  
 }
