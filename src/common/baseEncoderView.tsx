@@ -1,6 +1,7 @@
 import * as React from 'react';
 import app from 'common/app';
-import { CodeView, CodeEditor } from 'common/controls';
+import CodeView from './widgets/codeView';
+import CodeEditor from './widgets/codeEditor';
 
 interface State {
   src: string;
