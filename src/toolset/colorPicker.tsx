@@ -106,6 +106,7 @@ export default class ColorPicker extends React.Component<object, State> {
     </div>
   <div className="row">
     <div className="col-sm-auto">
+      <h4>Picker 1</h4>
       <ChromePicker
         disableAlpha={false}
         color={color}
@@ -113,6 +114,7 @@ export default class ColorPicker extends React.Component<object, State> {
       />
     </div>
     <div className="col-sm-auto">
+      <h4>Picker 2</h4>
       <PhotoshopPicker
         color={color}
         onChangeComplete={this.handleChangeComplete}
@@ -120,12 +122,14 @@ export default class ColorPicker extends React.Component<object, State> {
     </div>
   </div>
   <div className="mt-3">
+    <h4>Picker 3</h4>
     <HuePicker
       color={color}
       onChangeComplete={this.handleChangeComplete}
     />
   </div>
   <div className="mt-3 pb-4">
+    <p>Alpha</p>
     <AlphaPicker
       color={color}
       onChangeComplete={this.handleChangeComplete}
