@@ -19,7 +19,7 @@ export default class CodeEditor extends React.Component<Props, object> {
 <textarea 
   autoFocus={props.autoFocus}
   className="form-control cft-code-edit"
-  rows={10}
+  rows={5}
   onChange={(e) => props.onChange(e.target.value)}
   value={props.content}
   ref={(input) => this.textarea = input} 

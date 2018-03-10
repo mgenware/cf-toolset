@@ -21,7 +21,7 @@ export default class CodeView extends React.Component<Props, object> {
     className="cft-code-view mt-2"
     readOnly={true}
     style={{ width: '100%' }}
-    rows={10}
+    rows={5}
     value={props.content}
     ref={(input) => this.textarea = input} 
   />
