@@ -13,13 +13,14 @@ export enum DefaultActionType {
 }
 
 export class BaseActionView extends React.Component<object, State> {
-  private ls: {[id: string]: string};
+  // prepend an underscore to this variable for avoiding possible name conflicts with subclasses
+  private _ls: {[id: string]: string};
   private codeView: CodeView|null;
 
   constructor(props: object) {
     super(props);
 
-    this.ls = app.localizedMap(localizedStrings());
+    this._ls = app.localizedMap(localizedStrings());
     this.state = {
       src: '',
       dest: '',
@@ -51,7 +52,7 @@ export class BaseActionView extends React.Component<object, State> {
     })
   }
   <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this.ls.swap}</button>
-  <h2 className="mt-4">{this.ls.output}</h2>
+  <h2 className="mt-4">{this._ls.output}</h2>
   <CodeView
     content={this.state.dest}
     ref={(input) => this.codeView = input} 
@@ -61,8 +62,8 @@ export class BaseActionView extends React.Component<object, State> {
   }
   
   actionNames(): string[] {
-    const { ls } = this;
-    return [ls.encode, ls.decode];
+    const { _ls } = this;
+    return [_ls.encode, _ls.decode];
   }
 
   handleAction(index: number, src: string): string {
