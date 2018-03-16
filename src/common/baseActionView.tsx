@@ -38,20 +38,22 @@ export class BaseActionView extends React.Component<object, State> {
     content={state.src}
     onChange={(content) => this.setState({src: content})}
   />
+  <div className="mt-4">
+    {
+      this.actionNames().map((name, index) => {
+        return <button
+          key={index}
+          type="button"
+          className={'btn btn-light' + (index ? ' ml-2' : '')}
+          onClick={() => this.handleActionButtonClick(index, state.src)}
+        >
+          {name}
+        </button>;
+      })
+    }
+    <button type="button" className="btn btn-light ml-2" onClick={this.handleSwap}>{this._ls.swap}</button>
+  </div>
 
-  {
-    this.actionNames().map((name, index) => {
-      return <button
-        key={index}
-        type="button"
-        className="btn btn-light mt-4"
-        onClick={() => this.handleActionButtonClick(index, state.src)}
-      >
-        {name}
-      </button>;
-    })
-  }
-  <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this._ls.swap}</button>
   <h2 className="mt-4">{this._ls.output}</h2>
   <CodeView
     content={this.state.dest}
