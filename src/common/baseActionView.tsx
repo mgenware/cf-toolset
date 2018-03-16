@@ -51,7 +51,7 @@ export class BaseActionView extends React.Component<object, State> {
       </button>;
     })
   }
-  <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this.ls.swap}</button>
+  <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this._ls.swap}</button>
   <h2 className="mt-4">{this._ls.output}</h2>
   <CodeView
     content={this.state.dest}
