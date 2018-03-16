@@ -76,7 +76,7 @@ export class BaseActionView extends React.Component<object, State> {
 
   private handleActionButtonClick = (index: number, src: string) => {
     this.setState({
-      dest: this.handleAction(index, src),
+      dest: this.handleAction(index, src || ''),
     }, () => {
       this.selectCodeEditor();
     });
