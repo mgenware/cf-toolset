@@ -8,7 +8,11 @@ interface State {
   dest: string;
 }
 
-export default class BaseEncoderView extends React.Component<object, State> {
+export enum DefaultActionType {
+  encode, decode,
+}
+
+export class BaseActionView extends React.Component<object, State> {
   private ls: {[id: string]: string};
   private codeView: CodeView|null;
 
@@ -33,8 +37,19 @@ export default class BaseEncoderView extends React.Component<object, State> {
     content={state.src}
     onChange={(content) => this.setState({src: content})}
   />
-  <button type="button" className="btn btn-light mt-4" onClick={this.handleEncode}>{this.ls.encode}</button>
-  <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleDecode}>{this.ls.decode}</button>
+
+  {
+    this.actionNames().map((name, index) => {
+      return <button
+        key={index}
+        type="button"
+        className="btn btn-light mt-4"
+        onClick={() => this.handleActionButtonClick(index, state.src)}
+      >
+        {name}
+      </button>;
+    })
+  }
   <button type="button" className="btn btn-light mt-4 ml-2" onClick={this.handleSwap}>{this.ls.swap}</button>
   <h2 className="mt-4">{this.ls.output}</h2>
   <CodeView
@@ -44,12 +59,13 @@ export default class BaseEncoderView extends React.Component<object, State> {
 </div>
     );
   }
-
-  encodeOverride(src: string): string {
-    throw new Error('Not implemented');
+  
+  actionNames(): string[] {
+    const { ls } = this;
+    return [ls.encode, ls.decode];
   }
 
-  decodeOverride(src: string): string {
+  handleAction(index: number, src: string): string {
     throw new Error('Not implemented');
   }
 
@@ -57,19 +73,9 @@ export default class BaseEncoderView extends React.Component<object, State> {
     return '';
   }
 
-  private handleEncode = () => {
-    const { state } = this;
+  private handleActionButtonClick = (index: number, src: string) => {
     this.setState({
-      dest: this.encodeOverride(state.src),
-    }, () => {
-      this.selectCodeEditor();
-    });
-  }
-
-  private handleDecode = () => {
-    const { state } = this;
-    this.setState({
-      dest: this.decodeOverride(state.src),
+      dest: this.handleAction(index, src),
     }, () => {
       this.selectCodeEditor();
     });
