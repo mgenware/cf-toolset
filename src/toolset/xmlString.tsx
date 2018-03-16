@@ -2,7 +2,7 @@ import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import { XmlEntities } from 'html-entities';
 const entities = new XmlEntities();
 
-export default class XmlString extends BaseActionView {
+export default class XMLString extends BaseActionView {
   handleAction(index: number, src: string): string {
     switch (index) {
       case DefaultActionType.encode: {

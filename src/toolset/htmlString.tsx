@@ -2,7 +2,7 @@ import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import { AllHtmlEntities } from 'html-entities';
 const entities = new AllHtmlEntities();
 
-export default class HtmlString extends BaseActionView {
+export default class HTMLString extends BaseActionView {
   handleAction(index: number, src: string): string {
     switch (index) {
       case DefaultActionType.encode: {

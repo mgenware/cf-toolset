@@ -1,7 +1,7 @@
 import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import app from 'common/app';
 
-export default class HtmlString extends BaseActionView {
+export default class URLString extends BaseActionView {
   handleAction(index: number, src: string): string {
     switch (index) {
       case DefaultActionType.encode: {
