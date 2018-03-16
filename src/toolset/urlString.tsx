@@ -1,13 +1,19 @@
-import BaseEncoderView from 'common/baseEncoderView';
+import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import app from 'common/app';
 
-export default class HtmlString extends BaseEncoderView {
-  encodeOverride(src: string): string {
-    return encodeURIComponent(src);
-  }
+export default class HtmlString extends BaseActionView {
+  handleAction(index: number, src: string): string {
+    switch (index) {
+      case DefaultActionType.encode: {
+        return encodeURIComponent(src);
+      }
 
-  decodeOverride(src: string): string {
-    return decodeURIComponent(src);
+      case DefaultActionType.decode: {
+        return decodeURIComponent(src);
+      }
+
+      default: return '';
+    }
   }
 
   title(): string {
