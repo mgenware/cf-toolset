@@ -1,14 +1,20 @@
-import BaseEncoderView from 'common/baseEncoderView';
+import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import { XmlEntities } from 'html-entities';
 const entities = new XmlEntities();
 
-export default class XmlString extends BaseEncoderView {
-  encodeOverride(src: string): string {
-    return entities.encode(src);
-  }
+export default class XmlString extends BaseActionView {
+  handleAction(index: number, src: string): string {
+    switch (index) {
+      case DefaultActionType.encode: {
+        return entities.encode(src);
+      }
 
-  decodeOverride(src: string): string {
-    return entities.decode(src);
+      case DefaultActionType.decode: {
+        return entities.decode(src);
+      }
+
+      default: return '';
+    }
   }
 
   title(): string {
