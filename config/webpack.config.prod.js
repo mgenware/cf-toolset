@@ -62,6 +62,7 @@ module.exports = {
     'xml-string': './src/entries/xmlStringEntry.tsx',
     'url-string': './src/entries/urlStringEntry.tsx',
     'color-picker': './src/entries/colorPickerEntry.tsx',
+    'case-converter': './src/entries/caseConverterEntry.tsx',
   },
   output: {
     // The build folder.
