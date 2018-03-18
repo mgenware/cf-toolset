@@ -1,8 +1,8 @@
 # cf-toolset
-This is the source repo of a set of useful tools for programming hosted at [coldfunction.com/toolset](https://coldfunction.com/toolset).
+A set of useful programming tools hosted at [coldfunction.com/toolset](https://coldfunction.com/toolset).
 
 ## Live demo
-Already hosted at [coldfunction.com/toolset](https://coldfunction.com/toolset)
+[coldfunction.com/toolset](https://coldfunction.com/toolset)
 
 ## Running from source
 * Install Node.js and yarn.
