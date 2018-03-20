@@ -36,7 +36,7 @@ export class BasePrettier extends React.Component<object, State> {
     onChange={(content) => this.setState({src: content})}
   />
   <div className="mt-4">
-    <button type="button" className="btn btn-success" onClick={this.handleFormat}>{this._ls.prettify}</button>
+    <button type="button" className="btn btn-success" onClick={this.handleFormatClick}>{this._ls.prettify}</button>
   </div>
 
   <h2 className="mt-4">{this._ls.output}</h2>
@@ -56,7 +56,7 @@ export class BasePrettier extends React.Component<object, State> {
     throw new Error('Not implemented');
   }
 
-  private handleFormat = () => {
+  private handleFormatClick = () => {
     const { state } = this;
     this.setState({
       dest: prettier.format(state.src || '', this.prettierOpt()),
