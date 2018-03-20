@@ -60,6 +60,8 @@ export class BasePrettier extends React.Component<object, State> {
     const { state } = this;
     this.setState({
       dest: prettier.format(state.src || '', this.prettierOpt()),
+    }, () => {
+      this.selectCodeEditor();
     });
   }
 
