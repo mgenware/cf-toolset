@@ -9,26 +9,26 @@ import ColorPickerApp from 'toolset/colorPicker';
 import CaseConverter from 'toolset/caseConverter';
 import HTMLPrettier from 'toolset/htmlPrettier';
 
+// tslint:disable-next-line no-any
+const toolset: any[] = [
+  ['HTML String Encoder/Decoder', HTMLStringApp],
+  ['XML String Encoder/Decoder', XMLStringApp],
+  ['URL String Encoder/Decoder', URLStringApp],
+  ['Color Picker', ColorPickerApp],
+  ['Case Converter', CaseConverter],
+  ['HTML/JavaScript/CSS Prettier', HTMLPrettier],
+];
+
 class App extends React.Component {
   render() {
     return (
 <BrowserRouter>
   <div className="App">
     <ul>
-      <li><Link to="/html-string">HTML String Encoder/Decoder</Link></li>
-      <li><Link to="/xml-string">XML String Encoder/Decoder</Link></li>
-      <li><Link to="/url-string">URL String Encoder/Decoder</Link></li>
-      <li><Link to="/color-picker">Color Picker</Link></li>
-      <li><Link to="/case-converter">Case Converter</Link></li>
-      <li><Link to="/html-js-css-prettier">HTML/JavaScript/CSS Prettier</Link></li>
+      {toolset.map((t) => <li key={t[0]}><Link to={`/${(t[0])}`}>{t[0]}</Link></li>)}
     </ul>
     <hr />
-    <Route exact={true} path="/html-string" component={HTMLStringApp} />
-    <Route exact={true} path="/xml-string" component={XMLStringApp} />
-    <Route exact={true} path="/url-string" component={URLStringApp} />
-    <Route exact={true} path="/color-picker" component={ColorPickerApp} />
-    <Route exact={true} path="/case-converter" component={CaseConverter} />
-    <Route exact={true} path="/html-js-css-prettier" component={HTMLPrettier} />
+    {toolset.map((t) => <Route key={t[0]} exact={true} path={`/${(t[0])}`} component={t[1]} />)}
   </div>
 </BrowserRouter>
     );
