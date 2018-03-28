@@ -25,8 +25,8 @@ interface HTMLBeautifyOptions {
 }
 
 enum IndentOpt {
-  twoSpaces = '2s',
-  fourSpaces = '4s',
+  twoSpaces = 's2',
+  fourSpaces = 's4',
   tab = 'tab',
 }
 
@@ -61,7 +61,7 @@ export default class HTMLPrettier extends React.Component<object, State> {
   <form>
     <div className="form-group">
       <label htmlFor="selectIndent">{ls.indent}</label>
-      <select className="form-control" id="selectIndent" value={state.indentOpt} onChange={(e) => this.setState({ indentOpt: IndentOpt[e.target.value] })}>
+      <select className="form-control" id="selectIndent" value={state.indentOpt} onChange={(e) => this.setState({ indentOpt: e.target.value as IndentOpt })}>
         <option value={IndentOpt.twoSpaces}>{'2 ' + ls.spaces}</option>
         <option value={IndentOpt.fourSpaces}>{'4 ' + ls.spaces}</option>
         <option value={IndentOpt.tab}>{ls.tab}</option>
