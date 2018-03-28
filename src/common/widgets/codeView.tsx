@@ -6,7 +6,7 @@ export interface Props {
 }
 
 export default class CodeView extends React.Component<Props, object> {
-  private textarea: HTMLTextAreaElement|null;
+  private preElement: HTMLPreElement|null;
 
   constructor(props: Props) {
     super(props);
@@ -17,21 +17,19 @@ export default class CodeView extends React.Component<Props, object> {
     return (
 <div>
   <CopyButton disabled={!props.content} selectHandler={this.handleCopySelection} />
-  <textarea
+  <pre
     className="cft-code-view mt-2"
-    readOnly={true}
-    style={{ width: '100%' }}
-    rows={5}
-    value={props.content}
-    ref={(input) => this.textarea = input} 
-  />
+    ref={(input) => this.preElement = input}
+  >
+    <code>{props.content}</code>
+  </pre>
 </div>
     );
   }
 
   selectAll(): boolean {
-    if (this.textarea) {
-      this.textarea.select();
+    if (this.preElement) {
+      window.getSelection().selectAllChildren(this.preElement);
       return true;
     }
     return false;
