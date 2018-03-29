@@ -118,7 +118,7 @@ export default class HTMLPrettier extends React.Component<object, State> {
 function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
   return {
     en: {
-      title: 'HTML/JavaScript/CSS Prettify',
+      title: 'HTML Prettify',
       prettify: 'Prettify',
       output: 'Output',
       indent: 'Indent',
@@ -127,7 +127,7 @@ function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
     },
   
     cn: {
-      title: 'HTML/JavaScript/CSS 格式美化',
+      title: 'HTML 格式美化',
       prettify: '美化',
       output: '输出',
       indent: '缩进',
