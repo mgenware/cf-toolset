@@ -35,13 +35,15 @@ export default class CodeEditor extends React.Component<Props, object> {
     );
   }
 
-  private onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const text = e.target.value;
-    this.updateCharsInfo(text);
-    this.props.onChange(text);
+  componentWillReceiveProps(nextProps: Props) {
+    const props = this.props;
+    if (props.content !== nextProps.content) {
+      this.charInfo = CharInfo.count(nextProps.content);
+    }
   }
 
-  private updateCharsInfo(s: string) {
-    this.charInfo = CharInfo.count(s);
+  private onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const text = e.target.value;
+    this.props.onChange(text);
   }
 }
