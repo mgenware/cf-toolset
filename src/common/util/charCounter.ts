@@ -16,12 +16,12 @@ export class CharInfo {
     }
     lines++;
 
-    return new CharInfo(chars, spaces, lines);
+    return new CharInfo(chars, chars - spaces, lines);
   }
 
   constructor(
     public chars: number = 0,
-    public spaces: number = 0,
+    public charsNoSpaces: number = 0,
     public lines: number = 0,
   ) {}
 }

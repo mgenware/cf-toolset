@@ -7,16 +7,22 @@ export interface Props {
   content?: string;
 }
 
-export default class CodeView extends React.Component<Props, object> {
+export interface State {
+  charInfo?: CharInfo;
+}
+
+export default class CodeView extends React.Component<Props, State> {
   private preElement: HTMLPreElement|null;
-  private charInfo?: CharInfo|null;
 
   constructor(props: Props) {
     super(props);
+
+    this.state = {
+    };
   }
 
   render() {
-    const { props } = this;
+    const { props, state } = this;
     return (
 <div>
   <CopyButton disabled={!props.content} selectHandler={this.handleCopySelection} />
@@ -27,9 +33,9 @@ export default class CodeView extends React.Component<Props, object> {
     <code>{props.content}</code>
   </pre>
   {
-    this.charInfo &&
+    state.charInfo &&
     <div>
-      <CharInfoView charInfo={this.charInfo} />
+      <CharInfoView charInfo={state.charInfo} />
     </div>
   }
 </div>
@@ -47,7 +53,9 @@ export default class CodeView extends React.Component<Props, object> {
   componentWillReceiveProps(nextProps: Props) {
     const props = this.props;
     if (props.content !== nextProps.content) {
-      this.charInfo = CharInfo.count(nextProps.content);
+      this.setState({
+        charInfo: CharInfo.count(nextProps.content),
+      });
     }
   }
 

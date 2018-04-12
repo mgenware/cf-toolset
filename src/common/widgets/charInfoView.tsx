@@ -21,7 +21,7 @@ export default class CharInfoView extends React.Component<Props, object> {
     return (
 <div style={{borderLeft: '4px solid navy', paddingLeft: '4px', display: 'flex', fontSize: 'small', marginBottom: '20px', marginTop: '20px'}}>
   <div style={{flex: '1 1 0'}}>{ls.chars}: {info.chars}</div>
-  <div style={{flex: '1 1 0'}}>{ls.charsNoSpaces}: {info.spaces}</div>
+  <div style={{flex: '1 1 0'}}>{ls.charsNoSpaces}: {info.charsNoSpaces}</div>
   <div style={{flex: '1 1 0'}}>{ls.lines}: {info.lines}</div>
 </div>
     );
