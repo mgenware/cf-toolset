@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { CharInfo } from '../util/charCounter';
 import CharInfoView from './charInfoView';
+const debounce = require('lodash.debounce');
 
 export interface Props {
   autoFocus?: boolean;
@@ -8,16 +9,28 @@ export interface Props {
   onChange: (content: string) => void;
 }
 
-export default class CodeEditor extends React.Component<Props, object> {
+export interface State {
+  charInfo: CharInfo;
+}
+
+export default class CodeEditor extends React.Component<Props, State> {
   private textarea: HTMLTextAreaElement|null;
-  private charInfo: CharInfo = new CharInfo(0, 0, 0);
+  private handleNameChangeDebounced = debounce((text: string) => {
+    this.setState({
+      charInfo: CharInfo.count(text),
+    });
+  }, 800);
 
   constructor(props: Props) {
     super(props);
+
+    this.state = {
+      charInfo: new CharInfo(0, 0, 0),
+    };
   }
 
   render() {
-    const { props } = this;
+    const { props, state } = this;
     return (
 <div>
   <textarea 
@@ -29,7 +42,7 @@ export default class CodeEditor extends React.Component<Props, object> {
     ref={(input) => this.textarea = input} 
   />
   <div>
-    <CharInfoView charInfo={this.charInfo} />
+    <CharInfoView charInfo={state.charInfo} />
   </div>
 </div>
     );
@@ -38,7 +51,8 @@ export default class CodeEditor extends React.Component<Props, object> {
   componentWillReceiveProps(nextProps: Props) {
     const props = this.props;
     if (props.content !== nextProps.content) {
-      this.charInfo = CharInfo.count(nextProps.content);
+      const text = nextProps.content;
+      this.handleNameChangeDebounced(text);
     }
   }
 

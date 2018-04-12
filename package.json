@@ -21,6 +21,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "js-beautify": "^1.7.5",
+    "lodash.debounce": "^4.0.8",
     "m-fs": "^1.0.3",
     "object-assign": "4.1.1",
     "popper.js": "^1.12.9",
