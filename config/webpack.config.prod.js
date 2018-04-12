@@ -63,6 +63,7 @@ module.exports = {
     'url-string': './src/entries/urlStringEntry.tsx',
     'color-picker': './src/entries/colorPickerEntry.tsx',
     'case-converter': './src/entries/caseConverterEntry.tsx',
+    'html-prettier': './src/entries/htmlPrettierEntry.tsx',
   },
   output: {
     // The build folder.
