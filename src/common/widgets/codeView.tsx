@@ -1,5 +1,7 @@
 import * as React from 'react';
 import CopyButton from './copyButton';
+import { CharInfo } from '../util/charCounter';
+import CharInfoView from './charInfoView';
 
 export interface Props {
   content?: string;
@@ -7,6 +9,7 @@ export interface Props {
 
 export default class CodeView extends React.Component<Props, object> {
   private preElement: HTMLPreElement|null;
+  private charInfo?: CharInfo|null;
 
   constructor(props: Props) {
     super(props);
@@ -23,6 +26,12 @@ export default class CodeView extends React.Component<Props, object> {
   >
     <code>{props.content}</code>
   </pre>
+  {
+    this.charInfo &&
+    <div>
+      <CharInfoView charInfo={this.charInfo} />
+    </div>
+  }
 </div>
     );
   }
@@ -33,6 +42,13 @@ export default class CodeView extends React.Component<Props, object> {
       return true;
     }
     return false;
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    const props = this.props;
+    if (props.content !== nextProps.content) {
+      this.charInfo = CharInfo.count(nextProps.content);
+    }
   }
 
   private handleCopySelection = () => {
