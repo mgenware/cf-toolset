@@ -5,6 +5,7 @@ import CharInfoView from './charInfoView';
 
 export interface Props {
   content?: string;
+  lang?: string;
 }
 
 export interface State {
@@ -30,7 +31,7 @@ export default class CodeView extends React.Component<Props, State> {
     className="cft-code-view mt-2"
     ref={(input) => this.preElement = input}
   >
-    <code>{props.content}</code>
+    <code className={`language-${props.lang || 'none'}`}>{props.content}</code>
   </pre>
   {
     state.charInfo &&
