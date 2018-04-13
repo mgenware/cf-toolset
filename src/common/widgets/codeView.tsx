@@ -13,7 +13,7 @@ export interface State {
 }
 
 export default class CodeView extends React.Component<Props, State> {
-  private preElement: HTMLPreElement|null;
+  private textarea: HTMLTextAreaElement|null;
 
   constructor(props: Props) {
     super(props);
@@ -27,12 +27,12 @@ export default class CodeView extends React.Component<Props, State> {
     return (
 <div>
   <CopyButton disabled={!props.content} selectHandler={this.handleCopySelection} />
-  <pre
-    className="cft-code-view mt-2"
-    ref={(input) => this.preElement = input}
-  >
-    <code className={`language-${props.lang || 'none'}`}>{props.content}</code>
-  </pre>
+  <textarea 
+    className="form-control cft-code-edit mt-2"
+    rows={10}
+    value={props.content}
+    ref={(input) => this.textarea = input} 
+  />
   {
     state.charInfo &&
     <div>
@@ -44,8 +44,8 @@ export default class CodeView extends React.Component<Props, State> {
   }
 
   selectAll(): boolean {
-    if (this.preElement) {
-      window.getSelection().selectAllChildren(this.preElement);
+    if (this.textarea) {
+      this.textarea.select();
       return true;
     }
     return false;
