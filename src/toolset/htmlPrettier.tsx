@@ -79,6 +79,7 @@ export default class HTMLPrettier extends React.Component<object, State> {
 
   <h2 className="mt-4">{this.ls.output}</h2>
   <CodeView
+    lang="markup"
     content={this.state.dest}
     ref={(input) => this.codeView = input} 
   />
