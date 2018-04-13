@@ -16,7 +16,7 @@ const toolset: any[] = [
   ['URL String Encoder/Decoder', URLStringApp],
   ['Color Picker', ColorPickerApp],
   ['Case Converter', CaseConverter],
-  ['HTML Prettier', HTMLPrettier],
+  ['WebPage Source Prettify', HTMLPrettier],
 ];
 
 class App extends React.Component {
