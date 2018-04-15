@@ -11,9 +11,9 @@ import HTMLPrettier from 'toolset/htmlPrettier';
 
 // tslint:disable-next-line no-any
 const toolset: any[] = [
-  ['HTML String Encoder/Decoder', HTMLStringApp],
-  ['XML String Encoder/Decoder', XMLStringApp],
-  ['URL String Encoder/Decoder', URLStringApp],
+  ['HTML String Encoder and Decoder', HTMLStringApp],
+  ['XML String Encoder and Decoder', XMLStringApp],
+  ['URL String Encoder and Decoder', URLStringApp],
   ['Color Picker', ColorPickerApp],
   ['Case Converter', CaseConverter],
   ['WebPage Source Prettify', HTMLPrettier],
