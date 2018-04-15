@@ -7,6 +7,8 @@ export interface Props {
   autoFocus?: boolean;
   content?: string;
   onChange: (content: string) => void;
+
+  charsCounterDebounceWaitTime?: number;
 }
 
 export interface State {
@@ -19,7 +21,7 @@ export default class CodeEditor extends React.Component<Props, State> {
     this.setState({
       charInfo: CharInfo.count(text),
     });
-  }, 800);
+  }, this.props.charsCounterDebounceWaitTime || 800);
 
   constructor(props: Props) {
     super(props);

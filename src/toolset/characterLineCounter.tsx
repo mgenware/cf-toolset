@@ -17,7 +17,12 @@ export default class CharacterLineCounter extends React.Component<object, State>
   render() {
     const { state } = this;
     return (
-      <CodeEditor autoFocus={true} content={state.content} onChange={(s) => this.setState({ content: s })}/>
+      <CodeEditor
+        autoFocus={true}
+        content={state.content}
+        onChange={(s) => this.setState({ content: s })}
+        charsCounterDebounceWaitTime={500}
+      />
     );
   }
 }
