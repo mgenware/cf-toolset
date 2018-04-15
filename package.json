@@ -22,7 +22,6 @@
     "jest": "20.0.4",
     "js-beautify": "^1.7.5",
     "lodash.debounce": "^4.0.8",
-    "m-fs": "^1.0.3",
     "object-assign": "4.1.1",
     "popper.js": "^1.12.9",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -63,7 +62,9 @@
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
     "bootstrap": "^4.0.0",
+    "fs-syncx": "^1.1.1",
     "jquery": "^3.3.1",
+    "lodash.kebabcase": "^4.1.1",
     "typescript": "^2.7.2"
   },
   "jest": {

@@ -13,6 +13,9 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const kebabCase = require('lodash.kebabcase');
+const fss = require('fs-syncx');
+const fs = require('fs');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -47,6 +50,27 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
+const tsFiles = fss.listFiles(path.join(__dirname, '../src/toolset')).map((info) => info.name);
+const tsNames = tsFiles.map((s) => kebabCase(s.replace(/\.[^/.]+$/, "")));
+
+for (let i = 0; i < tsFiles.length; i++) {
+  const content = `import * as React from 'react';
+  import * as ReactDOM from 'react-dom';
+  import App from 'toolset/${tsFiles[i]}';
+  
+  ReactDOM.render(
+    <App />,
+    document.getElementById('${tsNames[i]}-app'),
+  );`;
+
+  fss.writeFileSync(path.join(__dirname, '../src/entries', tsFiles[i]), content);
+}
+
+const entries = {};
+for (let i = 0; i < tsFiles.length; i++) {
+  entries[tsNames[i]] = './src/entries/' + tsFiles[i];
+}
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -57,14 +81,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: {
-    'html-string': './src/entries/htmlStringEntry.tsx',
-    'xml-string': './src/entries/xmlStringEntry.tsx',
-    'url-string': './src/entries/urlStringEntry.tsx',
-    'color-picker': './src/entries/colorPickerEntry.tsx',
-    'case-converter': './src/entries/caseConverterEntry.tsx',
-    'html-prettier': './src/entries/htmlPrettierEntry.tsx',
-  },
+  entry: entries,
   output: {
     // The build folder.
     path: paths.appBuild,
