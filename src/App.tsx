@@ -25,12 +25,17 @@ class App extends React.Component {
   render() {
     return (
 <BrowserRouter>
-  <div className="App container">
-    <ul>
-      {toolset.map((t) => <li key={t[0]}><Link to={`/${(t[0])}`}>{t[0]}</Link></li>)}
-    </ul>
-    <hr />
-    {toolset.map((t) => <Route key={t[0]} exact={true} path={`/${(t[0])}`} component={t[1]} />)}
+  <div className="App container-fluid">
+    <div className="row">
+      <div className="col-auto">
+        <div className="list-group">
+          {toolset.map((t) => <Link className="list-group-item list-group-item-action" key={t[0]} to={`/${(t[0])}`}>{t[0]}</Link>)}
+        </div>
+      </div>
+      <div className="col">
+        {toolset.map((t) => <Route key={t[0]} exact={true} path={`/${(t[0])}`} component={t[1]} />)}
+      </div>
+    </div>
   </div>
 </BrowserRouter>
     );
