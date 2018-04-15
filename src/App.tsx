@@ -8,6 +8,7 @@ import URLStringApp from 'toolset/urlString';
 import ColorPickerApp from 'toolset/colorPicker';
 import CaseConverter from 'toolset/caseConverter';
 import HTMLPrettier from 'toolset/htmlPrettier';
+import CharacterLineCounter from 'toolset/characterLineCounter';
 
 // tslint:disable-next-line no-any
 const toolset: any[] = [
@@ -17,6 +18,7 @@ const toolset: any[] = [
   ['Color Picker', ColorPickerApp],
   ['Case Converter', CaseConverter],
   ['WebPage Source Prettify', HTMLPrettier],
+  ['Character or Line Counter', CharacterLineCounter]
 ];
 
 class App extends React.Component {
