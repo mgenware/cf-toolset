@@ -28,7 +28,7 @@ export class BasePrettier extends React.Component<object, State> {
     const { state } = this;
 
     return (
-<div className="container">
+<div>
   <h2>{this._ls.prettify + ' ' + this.languageName()}</h2>
   <CodeEditor
     autoFocus={true}

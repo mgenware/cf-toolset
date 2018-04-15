@@ -51,7 +51,7 @@ export default class ColorPicker extends React.Component<object, State> {
     }
 
     return (
-<div className="container">
+<div>
   <div className="row">
     <div className="col-md">
       <h2>RGB</h2>

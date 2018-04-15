@@ -31,7 +31,7 @@ export class BaseActionView extends React.Component<object, State> {
     const { state } = this;
 
     return (
-<div className="container">
+<div>
   <h2>{this.title()}</h2>
   <CodeEditor
     autoFocus={true}

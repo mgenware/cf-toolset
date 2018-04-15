@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     return (
 <BrowserRouter>
-  <div className="App">
+  <div className="App container">
     <ul>
       {toolset.map((t) => <li key={t[0]}><Link to={`/${(t[0])}`}>{t[0]}</Link></li>)}
     </ul>

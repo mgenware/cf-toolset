@@ -56,7 +56,7 @@ export default class HTMLPrettier extends React.Component<object, State> {
     const { ls } = this;
 
     return (
-<div className="container">
+<div>
   <h2>{ls.title}</h2>
   <form>
     <div className="form-group">
