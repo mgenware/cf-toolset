@@ -1,6 +1,10 @@
 # cf-toolset
 A set of useful programming tools hosted at [coldfunction.com/toolset](https://coldfunction.com/toolset).
 
+### Supported Languages
+* English
+* Chinese (Simplified)
+
 ## Live demo
 [coldfunction.com/toolset](https://coldfunction.com/toolset)
 
