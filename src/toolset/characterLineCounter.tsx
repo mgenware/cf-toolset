@@ -22,6 +22,7 @@ export default class CharacterLineCounter extends React.Component<object, State>
         content={state.content}
         onChange={(s) => this.setState({ content: s })}
         charsCounterDebounceWaitTime={500}
+        rows={20}
       />
     );
   }

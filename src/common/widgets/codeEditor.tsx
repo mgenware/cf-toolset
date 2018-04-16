@@ -9,6 +9,7 @@ export interface Props {
   onChange: (content: string) => void;
 
   charsCounterDebounceWaitTime?: number;
+  rows?: number;
 }
 
 export interface State {
@@ -38,7 +39,7 @@ export default class CodeEditor extends React.Component<Props, State> {
   <textarea 
     autoFocus={props.autoFocus}
     className="form-control cft-code-edit"
-    rows={10}
+    rows={props.rows || 10}
     onChange={this.onTextAreaChange}
     value={props.content}
     ref={(input) => this.textarea = input} 
