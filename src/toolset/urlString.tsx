@@ -1,4 +1,4 @@
-// # URL String Encoder and Decoder
+import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import app from 'common/app';
 
 export default class URLString extends BaseActionView {

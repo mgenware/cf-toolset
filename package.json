@@ -62,7 +62,6 @@
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
     "bootstrap": "^4.0.0",
-    "firstline": "^1.2.1",
     "fs-syncx": "^1.1.1",
     "jquery": "^3.3.1",
     "lodash.kebabcase": "^4.1.1",

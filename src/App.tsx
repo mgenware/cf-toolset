@@ -2,71 +2,38 @@ import * as React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as fs from 'fs';
-import * as nodepath from 'path';
-import * as fss from 'fs-syncx';
-const firstline = require('firstline');
+import HTMLStringApp from 'toolset/htmlString';
+import XMLStringApp from 'toolset/xmlString';
+import URLStringApp from 'toolset/urlString';
+import ColorPickerApp from 'toolset/colorPicker';
+import CaseConverter from 'toolset/caseConverter';
+import HTMLPrettier from 'toolset/htmlPrettier';
+import CharacterLineCounter from 'toolset/characterLineCounter';
 
-class Tool {
-  constructor(
-    public name: string,
-    public url: string,
-    // tslint:disable-next-line no-any
-    public cls: any,
-  ) { }
-}
+// tslint:disable-next-line no-any
+const toolset: any[] = [
+  ['HTML String Encoder and Decoder', HTMLStringApp],
+  ['XML String Encoder and Decoder', XMLStringApp],
+  ['URL String Encoder and Decoder', URLStringApp],
+  ['Color Picker', ColorPickerApp],
+  ['Case Converter', CaseConverter],
+  ['WebPage Source Prettify', HTMLPrettier],
+  ['Character or Line Counter', CharacterLineCounter]
+];
 
-interface State {
-  tools: Tool[];
-}
-
-class App extends React.Component<object, State> {
-  constructor(props: object) {
-    super(props);
-
-    this.state = {
-      tools: []
-    };
-  }
-
-  async componentDidMount() {
-    const files = fss.listFiles(nodepath.join(__dirname, './toolset')).map((info) => info.name);
-    const urls = files.map((s) => s.replace(/\.[^/.]+$/, ''));
-    const names = await Promise.all(files.map(async (file) => {
-      const line = (await firstline(file)) as string;
-      let name = line;
-      // Drop the "// #" to get the title
-      if (line.length > 4) {
-        name = line.substr(4);
-      }
-
-      return name;
-    }));
-
-    const tools: Tool[] = [];
-    for (let i = 0; i < files.length; i++) {
-      const tool = new Tool(names[i], urls[i], require(files[i]));
-      tools.push(tool);
-    }
-
-    this.setState({
-      tools: tools,
-    });
-  }
-
+class App extends React.Component {
   render() {
-    const { state } = this;
     return (
 <BrowserRouter>
   <div className="App container-fluid">
     <div className="row">
       <div className="col-auto">
         <div className="list-group">
-          {state.tools.map((t) => <Link className="list-group-item list-group-item-action" key={t.url} to={`/${(t.url)}`}>{t.name}</Link>)}
+          {toolset.map((t) => <Link className="list-group-item list-group-item-action" key={t[0]} to={`/${(t[0])}`}>{t[0]}</Link>)}
         </div>
       </div>
       <div className="col">
-        {state.tools.map((t) => <Route key={t.url} exact={true} path={`/${(t.url)}`} component={t.cls} />)}
+        {toolset.map((t) => <Route key={t[0]} exact={true} path={`/${(t[0])}`} component={t[1]} />)}
       </div>
     </div>
   </div>

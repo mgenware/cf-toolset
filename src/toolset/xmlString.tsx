@@ -1,4 +1,3 @@
-// # XML String Encoder and Decoder
 import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import { XmlEntities } from 'html-entities';
 const entities = new XmlEntities();
