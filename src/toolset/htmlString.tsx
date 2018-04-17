@@ -1,3 +1,4 @@
+// # HTML String Encoder and Decoder
 import { BaseActionView, DefaultActionType } from 'common/baseActionView';
 import { AllHtmlEntities } from 'html-entities';
 const entities = new AllHtmlEntities();
