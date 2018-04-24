@@ -9,6 +9,7 @@ import ColorPickerApp from 'toolset/colorPicker';
 import CaseConverter from 'toolset/caseConverter';
 import HTMLPrettier from 'toolset/htmlPrettier';
 import CharacterLineCounter from 'toolset/characterLineCounter';
+import FileHexdump from 'toolset/fileHexdump';
 
 // tslint:disable-next-line no-any
 const toolset: any[] = [
@@ -18,7 +19,8 @@ const toolset: any[] = [
   ['Color Picker', ColorPickerApp],
   ['Case Converter', CaseConverter],
   ['WebPage Source Prettify', HTMLPrettier],
-  ['Character or Line Counter', CharacterLineCounter]
+  ['Character or Line Counter', CharacterLineCounter],
+  ['Hexdump of a file', FileHexdump],
 ];
 
 class App extends React.Component {

@@ -17,6 +17,7 @@
     "fork-ts-checker-webpack-plugin": "^0.2.8",
     "fs-extra": "3.0.1",
     "fx23": "^2.0.2",
+    "hexdump-js": "^0.1.0",
     "html-entities": "^1.2.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
