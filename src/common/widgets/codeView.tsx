@@ -6,6 +6,7 @@ import CharInfoView from './charInfoView';
 export interface Props {
   content?: string;
   lang?: string;
+  hideCounter?: boolean;
 }
 
 export interface State {
@@ -55,7 +56,7 @@ export default class CodeView extends React.Component<Props, State> {
     const props = this.props;
     if (props.content !== nextProps.content) {
       this.setState({
-        charInfo: CharInfo.count(nextProps.content),
+        charInfo: props.hideCounter ? undefined : CharInfo.count(nextProps.content),
       });
     }
   }

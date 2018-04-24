@@ -27,7 +27,10 @@ export default class FileHexdump extends React.Component<object, State> {
 <div>
   <input type="file" id="inputFile" onChange={this.onFileChange}/>
   <p>{state.sizeInfo}</p>
-  <CodeView content={state.dump}/>
+  <CodeView
+    content={state.dump}
+    hideCounter={true}
+  />
 </div>
       );
     }
