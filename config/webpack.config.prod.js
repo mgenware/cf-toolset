@@ -60,7 +60,7 @@ for (let i = 0; i < tsFiles.length; i++) {
   
   ReactDOM.render(
     <App />,
-    document.getElementById('${tsNames[i]}-app'),
+    document.getElementById('cft-${tsNames[i]}-app'),
   );`;
 
   fss.writeFileSync(path.join(__dirname, '../src/entries', tsFiles[i]), content);
