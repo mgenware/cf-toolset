@@ -111,5 +111,6 @@ const cn = {
 };
 
 module.exports = {
-  cn, en,
+  cn: cn,
+  en: en,
 };
