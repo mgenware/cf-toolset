@@ -10,16 +10,15 @@ export interface Props {
 
 export default class CopyButton extends React.Component<Props, object> {
   private btnCopy: HTMLButtonElement|null;
-  private ls: {[id: string]: string};
 
   constructor(props: Props) {
     super(props);
-
-    this.ls = app.localizedMap(localizedStrings());
   }
 
   render() {
     const { props } = this;
+    const ls = app.ls.copyButton;
+
     return (
 <button 
   type="button"
@@ -27,12 +26,12 @@ export default class CopyButton extends React.Component<Props, object> {
   onClick={this.handleCopyClick}
   data-toggle="tooltip"
   data-placement="top"
-  data-title={this.ls.copied}
+  data-title={ls.copied}
   data-trigger="manual"
   disabled={props.disabled}
   ref={(input) => this.btnCopy = input}
 >
-  {this.ls.copy}
+  {ls.copy}
 </button>
     );
   }
@@ -50,18 +49,4 @@ export default class CopyButton extends React.Component<Props, object> {
       }, 800);
     }
   }
-}
-
-function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
-  return {
-    en: {
-      copy: 'Copy',
-      copied: 'Copied',
-    },
-  
-    cn: {
-      copy: '复制',
-      copied: '复制完毕',
-    }
-  };
 }

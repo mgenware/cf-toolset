@@ -10,8 +10,6 @@ interface State {
 }
 
 export default class FileHexdump extends React.Component<object, State> {
-  private ls: {[id: string]: string} = app.localizedMap(localizedStrings());
-
   constructor(props: object) {
     super(props);
 
@@ -22,6 +20,8 @@ export default class FileHexdump extends React.Component<object, State> {
 
   render() {
     const { state } = this;
+    const ls = app.ls.fileHexdump.notSupported;
+
     if (FileReader && FileList && window.Blob) {
       return (
 <div>
@@ -36,7 +36,7 @@ export default class FileHexdump extends React.Component<object, State> {
     }
 
     return (
-<div className="alert alert-danger" role="alert">{this.ls.notSupported}</div>
+<div className="alert alert-danger" role="alert">{ls.notSupported}</div>
     );
   }
 
@@ -63,16 +63,4 @@ export default class FileHexdump extends React.Component<object, State> {
       sizeInfo: sizeInfo,
     });
   }
-}
-
-function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
-  return {
-    en: {
-      notSupported: 'File APIs are not supported in your browser. Please consider upgrading your browser.',
-    },
-  
-    cn: {
-      notSupported: '您的浏览器不支持文件系统API，请考虑升级浏览器。',
-    }
-  };
 }

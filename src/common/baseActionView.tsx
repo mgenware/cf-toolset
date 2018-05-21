@@ -13,14 +13,11 @@ export enum DefaultActionType {
 }
 
 export class BaseActionView extends React.Component<object, State> {
-  // prepend an underscore to this variable for avoiding possible name conflicts with subclasses
-  private _ls: {[id: string]: string};
   private codeView: CodeView|null;
 
   constructor(props: object) {
     super(props);
 
-    this._ls = app.localizedMap(localizedStrings());
     this.state = {
       src: '',
       dest: '',
@@ -29,6 +26,7 @@ export class BaseActionView extends React.Component<object, State> {
 
   render() {
     const { state } = this;
+    const ls = app.ls.baseActionView;
 
     return (
 <div>
@@ -51,10 +49,10 @@ export class BaseActionView extends React.Component<object, State> {
         </button>;
       })
     }
-    <button type="button" className="btn btn-light ml-2" onClick={this.handleSwap}>{this._ls.swap}</button>
+    <button type="button" className="btn btn-light ml-2" onClick={this.handleSwap}>{ls.swap}</button>
   </div>
 
-  <h2 className="mt-4">{this._ls.output}</h2>
+  <h2 className="mt-4">{ls.output}</h2>
   <CodeView
     content={this.state.dest}
     ref={(input) => this.codeView = input} 
@@ -64,8 +62,8 @@ export class BaseActionView extends React.Component<object, State> {
   }
   
   actionNames(): string[] {
-    const { _ls } = this;
-    return [_ls.encode, _ls.decode];
+    const ls = app.ls.baseActionView;
+    return [ls.encode, ls.decode];
   }
 
   handleAction(index: number, src: string): string {
@@ -97,22 +95,4 @@ export class BaseActionView extends React.Component<object, State> {
       this.codeView.selectAll();
     }
   }
-}
-
-function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
-  return {
-    en: {
-      encode: 'Encode',
-      decode: 'Decode',
-      output: 'Output',
-      swap: 'Swap',
-    },
-  
-    cn: {
-      encode: '编码',
-      decode: '解码',
-      output: '输出',
-      swap: '交换',
-    }
-  };
 }

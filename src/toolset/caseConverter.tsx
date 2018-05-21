@@ -7,8 +7,6 @@ enum ActionType {
 }
 
 export default class CaseConverter extends BaseActionView {
-  private ls: {[id: string]: string} = app.localizedMap(localizedStrings());
-
   handleAction(index: number, src: string): string {
     switch (index) {
       case ActionType.uppercase: {
@@ -32,12 +30,8 @@ export default class CaseConverter extends BaseActionView {
   }
 
   actionNames(): string[] {
-    const { ls } = this;
+    const ls = app.ls.caseConverter;
     return [ls.uppercase, ls.lowercase, ls.capitalized, ls.sentence];
-  }
-
-  title(): string {
-    return app.localizedMap(localizedStrings()).title;
   }
 
   private toCapitalized(src: string): string {
@@ -69,22 +63,4 @@ export default class CaseConverter extends BaseActionView {
     }
     return res;
   }
-}
-
-function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
-  return {
-    en: {
-      uppercase: 'UPPERCASE',
-      lowercase: 'lowercase',
-      capitalized: 'Capitalized Case',
-      sentence: 'Sentence Case',
-    },
-  
-    cn: {
-      uppercase: '大小',
-      lowercase: '小写',
-      capitalized: '首字母大写',
-      sentence: '每句首字母大写',
-    }
-  };
 }

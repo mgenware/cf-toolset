@@ -37,13 +37,11 @@ interface State {
 }
 
 export default class HTMLPrettier extends React.Component<object, State> {
-  private ls: {[id: string]: string};
   private codeView: CodeView|null;
 
   constructor(props: object) {
     super(props);
 
-    this.ls = app.localizedMap(localizedStrings());
     this.state = {
       src: '',
       dest: '',
@@ -53,11 +51,10 @@ export default class HTMLPrettier extends React.Component<object, State> {
 
   render() {
     const { state } = this;
-    const { ls } = this;
+    const ls = app.ls.HTMLPrettier;
 
     return (
 <div>
-  <h2>{ls.title}</h2>
   <form>
     <div className="form-group">
       <label htmlFor="selectIndent">{ls.indent}</label>
@@ -116,24 +113,3 @@ export default class HTMLPrettier extends React.Component<object, State> {
   }
 }
 
-function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
-  return {
-    en: {
-      title: 'WebPage Source Prettify',
-      prettify: 'Prettify',
-      output: 'Output',
-      indent: 'Indent',
-      tab: 'Tab',
-      spaces: 'Spaces',
-    },
-  
-    cn: {
-      title: '网页源码 格式美化',
-      prettify: '美化',
-      output: '输出',
-      indent: '缩进',
-      tab: 'Tab',
-      spaces: '空格',
-    }
-  };
-}

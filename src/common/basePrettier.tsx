@@ -10,14 +10,11 @@ interface State {
 }
 
 export class BasePrettier extends React.Component<object, State> {
-  // prepend an underscore to this variable for avoiding possible name conflicts with subclasses
-  private _ls: {[id: string]: string};
   private codeView: CodeView|null;
 
   constructor(props: object) {
     super(props);
 
-    this._ls = app.localizedMap(localizedStrings());
     this.state = {
       src: '',
       dest: '',
@@ -26,20 +23,21 @@ export class BasePrettier extends React.Component<object, State> {
 
   render() {
     const { state } = this;
+    const ls = app.ls.prettier;
 
     return (
 <div>
-  <h2>{this._ls.prettify + ' ' + this.languageName()}</h2>
+  <h2>{ls.prettify + ' ' + this.languageName()}</h2>
   <CodeEditor
     autoFocus={true}
     content={state.src}
     onChange={(content) => this.setState({src: content})}
   />
   <div className="mt-4">
-    <button type="button" className="btn btn-success" onClick={this.handleFormatClick}>{this._ls.prettify}</button>
+    <button type="button" className="btn btn-success" onClick={this.handleFormatClick}>{ls.prettify}</button>
   </div>
 
-  <h2 className="mt-4">{this._ls.output}</h2>
+  <h2 className="mt-4">{ls.output}</h2>
   <CodeView
     content={this.state.dest}
     ref={(input) => this.codeView = input} 
@@ -70,16 +68,4 @@ export class BasePrettier extends React.Component<object, State> {
       this.codeView.selectAll();
     }
   }
-}
-
-function localizedStrings(): { [id1: string]: { [id2: string]: string; }; } {
-  return {
-    en: {
-      prettify: 'Prettify',
-    },
-  
-    cn: {
-      prettify: '美化',
-    }
-  };
 }
