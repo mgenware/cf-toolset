@@ -15,7 +15,7 @@ const getClientEnvironment = require('./env');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const kebabCase = require('lodash.kebabcase');
 const fss = require('fs-syncx');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -50,6 +50,9 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
+
+fs.emptyDirSync(paths.appBuild);
+
 // Entry names (caseConverter, htmlPrettier)
 const tsFiles = fss.listFiles(path.join(__dirname, '../src/toolset')).map((info) => info.name);
 const tsFileNames = tsFiles.map((file) => path.parse(file).name);
@@ -67,7 +70,7 @@ for (const lang of langs) {
         throw new Error(`Unexpected empty name for "${entryName}"`);
       }
 
-      const outFile = path.join(__dirname, '../meta/ls', lang, entryName, '.txt');
+      const outFile = path.join(__dirname, '../build/meta', lang, entryName + '.txt');
       fss.writeFileSync(outFile, localizedName);
     } catch (e) {
       throw new Error(`Error getting localized name for entry "${entryName}", message: ${e.message}`);
