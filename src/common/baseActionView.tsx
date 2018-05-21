@@ -30,7 +30,6 @@ export class BaseActionView extends React.Component<object, State> {
 
     return (
 <div>
-  <h2>{this.title()}</h2>
   <CodeEditor
     autoFocus={true}
     content={state.src}
@@ -68,10 +67,6 @@ export class BaseActionView extends React.Component<object, State> {
 
   handleAction(index: number, src: string): string {
     throw new Error('Not implemented');
-  }
-
-  title(): string {
-    return '';
   }
 
   private handleActionButtonClick = (index: number, src: string) => {

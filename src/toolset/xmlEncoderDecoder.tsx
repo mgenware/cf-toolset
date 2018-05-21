@@ -16,8 +16,4 @@ export default class XMLString extends BaseActionView {
       default: return '';
     }
   }
-
-  title(): string {
-    return 'XML';
-  }
 }

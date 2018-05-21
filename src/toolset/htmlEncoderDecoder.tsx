@@ -16,8 +16,4 @@ export default class HTMLString extends BaseActionView {
       default: return '';
     }
   }
-
-  title(): string {
-    return 'HTML';
-  }
 }
