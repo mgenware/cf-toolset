@@ -50,8 +50,30 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
+// Entry names (caseConverter, htmlPrettier)
 const tsFiles = fss.listFiles(path.join(__dirname, '../src/toolset')).map((info) => info.name);
-const tsNames = tsFiles.map((s) => kebabCase(s.replace(/\.[^/.]+$/, "")));
+const tsFileNames = tsFiles.map((file) => path.parse(file).name);
+// URL names (case-converter, html-prettier)
+const tsNames = tsFileNames.map(kebabCase);
+
+const ls = require('../src/ls/ls');
+
+const langs = ['en', 'cn'];
+for (const lang of langs) {
+  for (const entryName of tsFileNames) {
+    try {
+      const localizedName = ls[lang][entryName].appName;
+      if (!localizedName) {
+        throw new Error(`Unexpected empty name for "${entryName}"`);
+      }
+
+      const outFile = path.join(__dirname, '../meta/ls', lang, entryName, '.txt');
+      fss.writeFileSync(outFile, localizedName);
+    } catch (e) {
+      throw new Error(`Error getting localized name for entry "${entryName}", message: ${e.message}`);
+    }
+  }
+}
 
 for (let i = 0; i < tsFiles.length; i++) {
   const content = `import * as React from 'react';
