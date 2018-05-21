@@ -1,5 +1,5 @@
 import './app.css';
-import LS from 'ls/ls';
+const LS = require('../ls/ls');
 
 export class App {
   // Localized strings

@@ -110,6 +110,6 @@ const cn = {
   },
 };
 
-export default {
+module.exports = {
   cn, en,
 };
