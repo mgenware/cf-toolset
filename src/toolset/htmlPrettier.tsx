@@ -71,10 +71,10 @@ export default class HTMLPrettier extends React.Component<object, State> {
     onChange={(content) => this.setState({src: content})}
   />
   <div className="mt-4">
-    <button type="button" className="btn btn-success" onClick={this.handleFormatClick}>{this.ls.prettify}</button>
+    <button type="button" className="btn btn-success" onClick={this.handleFormatClick}>{ls.prettify}</button>
   </div>
 
-  <h2 className="mt-4">{this.ls.output}</h2>
+  <h2 className="mt-4">{ls.output}</h2>
   <CodeView
     lang="markup"
     content={this.state.dest}
@@ -112,4 +112,3 @@ export default class HTMLPrettier extends React.Component<object, State> {
     }
   }
 }
-
