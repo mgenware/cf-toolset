@@ -77,7 +77,7 @@ for (const lang of langs) {
       }
       tsLocalizedTitles[lang][entryName] = localizedName;
 
-      const outFile = path.join(__dirname, '../build/meta', lang, 'title', entryName + '.txt');
+      const outFile = path.join(__dirname, '../build/meta', lang, 'title', kebabCase(entryName) + '.txt');
       fss.writeFileSync(outFile, localizedName);
     } catch (e) {
       throw new Error(`Error getting localized name for entry "${entryName}", message: ${e.message}`);
