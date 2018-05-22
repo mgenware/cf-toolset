@@ -16,6 +16,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const kebabCase = require('lodash.kebabcase');
 const fss = require('fs-syncx');
 const fs = require('fs-extra');
+const escapeHTML = require('escape-html');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -60,22 +61,36 @@ const tsFileNames = tsFiles.map((file) => path.parse(file).name);
 const tsNames = tsFileNames.map(kebabCase);
 
 const ls = require('../src/ls/ls');
+let tsLocalizedTitles = {};
 
+// Generate meta files
 const langs = ['en', 'cn'];
 for (const lang of langs) {
+  tsLocalizedTitles[lang] = {};
+
+  // Generate localized title files
   for (const entryName of tsFileNames) {
     try {
       const localizedName = ls[lang][entryName].appName;
       if (!localizedName) {
         throw new Error(`Unexpected empty name for "${entryName}"`);
       }
+      tsLocalizedTitles[lang][entryName] = localizedName;
 
-      const outFile = path.join(__dirname, '../build/meta', lang, entryName + '.txt');
+      const outFile = path.join(__dirname, '../build/meta', lang, 'title', entryName + '.txt');
       fss.writeFileSync(outFile, localizedName);
     } catch (e) {
       throw new Error(`Error getting localized name for entry "${entryName}", message: ${e.message}`);
     }
   }
+
+  // Generate localized template files
+  const linksHTML = Object.entries(tsLocalizedTitles[lang]).map((entry) => {
+    const [name, title] = entry;
+    return `<a href="/toolset/${name}" class="list-group-item list-group-item-action">${escapeHTML(title)}</a>`;
+  });
+  const templateHTML = '<div class="list-group">' + linksHTML.join() + '</div>';
+  fss.writeFileSync(path.join(__dirname, '../build/meta/', lang, 'template.html'), templateHTML);
 }
 
 for (let i = 0; i < tsFiles.length; i++) {
