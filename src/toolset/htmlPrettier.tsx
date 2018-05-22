@@ -51,7 +51,7 @@ export default class HTMLPrettier extends React.Component<object, State> {
 
   render() {
     const { state } = this;
-    const ls = app.ls.HTMLPrettier;
+    const ls = app.ls.htmlPrettier;
 
     return (
 <div>
