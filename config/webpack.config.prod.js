@@ -13,7 +13,6 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const kebabCase = require('lodash.kebabcase');
 const fss = require('fs-syncx');
 const fs = require('fs-extra');
 const escapeHTML = require('escape-html');
@@ -48,7 +47,7 @@ const cssFilename = 'static/css/[name].[contenthash:8].css';
 // To have this structure working with relative paths, we have to use custom options.
 const extractTextPluginOptions = shouldUseRelativeAssetPaths
   ? // Making sure that the publicPath goes back to to build folder.
-    { publicPath: Array(cssFilename.split('/').length).join('../') }
+  { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
 
@@ -57,9 +56,7 @@ fs.emptyDirSync(paths.appBuild);
 // Entry names (caseConverter, htmlPrettier)
 const tsFiles = fss.listFiles(path.join(__dirname, '../src/toolset')).map((info) => info.name);
 const tsFileNames = tsFiles.map((file) => path.parse(file).name);
-// URL names (case-converter, html-prettier)
-const tsNames = tsFileNames.map(kebabCase);
-
+// Load localized strings
 const ls = require('../src/ls/ls');
 let tsLocalizedTitles = {};
 
@@ -77,7 +74,7 @@ for (const lang of langs) {
       }
       tsLocalizedTitles[lang][entryName] = localizedName;
 
-      const outFile = path.join(__dirname, '../build/meta', lang, 'title', kebabCase(entryName) + '.txt');
+      const outFile = path.join(__dirname, '../build/meta', lang, 'title', entryName + '.txt');
       fss.writeFileSync(outFile, localizedName);
     } catch (e) {
       throw new Error(`Error getting localized name for entry "${entryName}", message: ${e.message}`);
@@ -87,7 +84,7 @@ for (const lang of langs) {
   // Generate localized template files
   const linksHTML = Object.entries(tsLocalizedTitles[lang]).map((entry) => {
     const [name, title] = entry;
-    return `<a href="/toolset/${kebabCase(name)}" class="list-group-item list-group-item-action">${escapeHTML(title)}</a>`;
+    return `<a href="/toolset/${name}" class="list-group-item list-group-item-action">${escapeHTML(title)}</a>`;
   });
   const templateHTML = '<div class="list-group">' + linksHTML.join('') + '</div>';
   fss.writeFileSync(path.join(__dirname, '../build/meta/', lang, 'template.html'), templateHTML);
@@ -100,7 +97,7 @@ for (let i = 0; i < tsFiles.length; i++) {
   
   ReactDOM.render(
     <App />,
-    document.getElementById('cft-${tsNames[i]}-app'),
+    document.getElementById('cft-${tsFileNames[i]}-app'),
   );`;
 
   fss.writeFileSync(path.join(__dirname, '../src/entries', tsFiles[i]), content);
@@ -108,7 +105,7 @@ for (let i = 0; i < tsFiles.length; i++) {
 
 const entries = {};
 for (let i = 0; i < tsFiles.length; i++) {
-  entries[tsNames[i]] = './src/entries/' + tsFiles[i];
+  entries[tsFileNames[i]] = './src/entries/' + tsFiles[i];
 }
 
 // This is the production configuration.
