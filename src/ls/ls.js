@@ -5,7 +5,7 @@ const en = {
     encode: 'Encode',
     decode: 'Decode',
   },
-  caseConverter: {
+  'case-converter': {
     appName: 'Case Converter',
     uppercase: 'UPPERCASE',
     lowercase: 'lowercase',
@@ -25,17 +25,17 @@ const en = {
     copy: 'Copy',
     copied: 'Copied',
   },
-  fileHexdump: {
+  'file-hex-dump': {
     appName: 'File Hex Dump',
     notSupported: 'File APIs are not supported in your browser. Please consider upgrading your browser.',
   },
-  characterLineCounter: {
+  'character-line-counter': {
     appName: 'Character / Line Counter',
   },
-  colorPicker: {
+  'color-picker': {
     appName: 'Color Picker',
   },
-  htmlPrettier: {
+  'html-prettier': {
     appName: 'WebPage Source Prettify',
     prettify: 'Prettify',
     output: 'Output',
@@ -43,13 +43,13 @@ const en = {
     tab: 'Tab',
     spaces: 'Spaces',
   },
-  htmlEncoderDecoder: {
+  'html-encoder-decoder': {
     appName: 'HTML Encoder Decoder',
   },
-  urlEncoderDecoder: {
+  'url-encoder-decoder': {
     appName: 'URL Encoder Decoder',
   },
-  xmlEncoderDecoder: {
+  'xml-encoder-decoder': {
     appName: 'XML Encoder Decoder',
   },
 };
@@ -61,7 +61,7 @@ const cn = {
     encode: '编码',
     decode: '解码',
   },
-  caseConverter: {
+  'case-converter': {
     appName: '大小写转换器',
     uppercase: '大小',
     lowercase: '小写',
@@ -81,17 +81,17 @@ const cn = {
     copy: '复制',
     copied: '复制完毕',
   },
-  fileHexdump: {
+  'file-hex-dump': {
     appName: '文件二进制预览',
     notSupported: '您的浏览器不支持文件系统API，请考虑升级浏览器。',
   },
-  characterLineCounter: {
+  'character-line-counter': {
     appName: '字数行数统计',
   },
-  colorPicker: {
+  'color-picker': {
     appName: '颜色选择器',
   },
-  htmlPrettier: {
+  'html-prettier': {
     appName: '网页源码 格式美化',
     prettify: '美化',
     output: '输出',
@@ -99,13 +99,13 @@ const cn = {
     tab: 'Tab',
     spaces: '空格',
   },
-  htmlEncoderDecoder: {
+  'html-encoder-decoder': {
     appName: 'HTML 编码解码',
   },
-  urlEncoderDecoder: {
+  'url-encoder-decoder': {
     appName: 'URL 编码解码',
   },
-  xmlEncoderDecoder: {
+  'xml-encoder-decoder': {
     appName: 'XML 编码解码',
   },
 };

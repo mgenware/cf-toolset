@@ -2,14 +2,14 @@ import * as React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HTMLStringApp from 'toolset/htmlEncoderDecoder';
-import XMLStringApp from 'toolset/xmlEncoderDecoder';
-import URLStringApp from 'toolset/urlEncoderDecoder';
-import ColorPickerApp from 'toolset/colorPicker';
-import CaseConverter from 'toolset/caseConverter';
-import HTMLPrettier from 'toolset/htmlPrettier';
-import CharacterLineCounter from 'toolset/characterLineCounter';
-import FileHexdump from 'toolset/fileHexdump';
+import HTMLStringApp from 'toolset/html-encoder-decoder';
+import XMLStringApp from 'toolset/xml-encoder-decoder';
+import URLStringApp from 'toolset/url-encoder-decoder';
+import ColorPickerApp from 'toolset/color-picker';
+import CaseConverter from 'toolset/case-converter';
+import HTMLPrettier from 'toolset/html-prettier';
+import CharacterLineCounter from 'toolset/character-line-counter';
+import FileHexdump from 'toolset/file-hex-dump';
 
 // tslint:disable-next-line no-any
 const toolset: any[] = [
