@@ -87,9 +87,9 @@ for (const lang of langs) {
   // Generate localized template files
   const linksHTML = Object.entries(tsLocalizedTitles[lang]).map((entry) => {
     const [name, title] = entry;
-    return `<a href="/toolset/${name}" class="list-group-item list-group-item-action">${escapeHTML(title)}</a>`;
+    return `<a href="/toolset/${kebabCase(name)}" class="list-group-item list-group-item-action">${escapeHTML(title)}</a>`;
   });
-  const templateHTML = '<div class="list-group">' + linksHTML.join() + '</div>';
+  const templateHTML = '<div class="list-group">' + linksHTML.join('') + '</div>';
   fss.writeFileSync(path.join(__dirname, '../build/meta/', lang, 'template.html'), templateHTML);
 }
 
