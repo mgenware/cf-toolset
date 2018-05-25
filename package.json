@@ -66,6 +66,7 @@
     "escape-html": "^1.0.3",
     "fs-syncx": "^1.1.1",
     "jquery": "^3.3.1",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.7.2"
   },
   "jest": {
