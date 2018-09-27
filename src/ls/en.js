@@ -6,4 +6,6 @@ window.cft_ls = {
   encode: 'Encode',
   decode: 'Decode',
   data: 'Data',
+  showUnicodeChars: 'Show unicode chars',
+  hideUnicodeChars: 'Hide unicode chars',
 };

@@ -6,4 +6,6 @@ window.cft_ls = {
   encode: '编码',
   decode: '解码',
   data: '数据',
+  showUnicodeChars: '显示 Unicode 字符',
+  hideUnicodeChars: '隐藏 Unicode 字符',
 };
