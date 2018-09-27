@@ -1,9 +1,9 @@
 <template>
 <div>
   <textarea
-    v-model="content"
+    class="editor"
     rows="10"
-    @change="$emit('update:title')"
+    @input="$emit('update:content', $event.target.value)"
   />
 </div>
 </template>
@@ -16,3 +16,11 @@ export default class CodeEditor extends Vue {
   @Prop() content!: string;
 }
 </script>
+
+<style scoped>
+.editor {
+  font-size: 15px;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  width: 100%;
+}
+</style>

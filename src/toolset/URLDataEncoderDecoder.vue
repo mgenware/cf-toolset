@@ -1,18 +1,18 @@
 <template>
 <div>
   <div class="field">
-    <label class="label">{{$ls.urlData}}</label>
+    <label class="label">{{$ls.data}}</label>
     <div class="control">
-      <CodeEditor :content="input" />
+      <CodeEditor :content.sync="input" />
     </div>
   </div>
 
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-primary">{{$ls.encode}}</button>
+      <button class="button is-primary" @click="handleEncode">{{$ls.encode}}</button>
     </div>
     <div class="control">
-      <button class="button is-primary">{{$ls.decode}}</button>
+      <button class="button is-primary" @click="handleDecode">{{$ls.decode}}</button>
     </div>
   </div>
 
@@ -30,11 +30,23 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 import CodeEditor from '@/views/CodeEditor.vue';
 import CodeView from '@/views/CodeView.vue';
 
-@Component
-export default class URLEncoderDecoder extends Vue {
+@Component({
+  components: {
+    CodeEditor, CodeView,
+  },
+})
+export default class URLDataEncoderDecoder extends Vue {
   @Prop() content!: string;
 
   input = '';
   result = '';
+
+  handleEncode() {
+    this.result = encodeURIComponent(this.input);
+  }
+
+  handleDecode() {
+    this.result = decodeURIComponent(this.input);
+  }
 }
 </script>

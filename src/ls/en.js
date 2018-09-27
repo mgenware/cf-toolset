@@ -5,5 +5,5 @@ window.cft_ls = {
   output: 'Output',
   encode: 'Encode',
   decode: 'Decode',
-  urlData: 'URL Data',
+  data: 'Data',
 };

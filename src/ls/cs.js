@@ -5,5 +5,5 @@ window.cft_ls = {
   output: '输出',
   encode: '编码',
   decode: '解码',
-  urlData: 'URL 数据',
+  data: '数据',
 };
