@@ -8,8 +8,8 @@ export default new Router({
   base: 'toolset',
   routes: [
     {
-      path: '/url-encoder-decoder',
-      name: 'url-encoder-decoder',
+      path: '/url-data-encoder-decoder',
+      name: 'url-data-encoder-decoder',
       component: () => import(/* webpackChunkName: "URLDataEncoderDecoder" */ './toolset/URLDataEncoderDecoder.vue'),
     },
   ],
