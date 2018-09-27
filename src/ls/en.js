@@ -8,4 +8,13 @@ window.cft_ls = {
   data: 'Data',
   showUnicodeChars: 'Show unicode chars',
   hideUnicodeChars: 'Hide unicode chars',
+  uppercaseBtn: 'UPPERCASE',
+  lowercaseBtn: 'lowercase',
+  capitalizedBtn: 'Capitalized Case',
+  sentenceCaseBtn: 'Sentence Case',
+  HTMLDataEncoderDecoder: 'HTML Data Encoder/Decoder',
+  XMLDataEncoderDecoder: 'XML Data Encoder/Decoder',
+  URLDataEncoderDecoder: 'URL Data Encoder/Decoder',
+  URLUnicodeTransformer: 'Show/Hide URL Unicode Chars',
+  CaseConverter: 'Case Converter',
 };

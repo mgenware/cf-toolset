@@ -3,6 +3,7 @@
     ["HTMLDataEncoderDecoder", "html-data-encoder-decoder"],
     ["URLDataEncoderDecoder", "url-data-encoder-decoder"],
     ["URLUnicodeTransformer", "url-unicode-transformer"],
-    ["XMLDataEncoderDecoder", "xml-data-encoder-decoder"]
+    ["XMLDataEncoderDecoder", "xml-data-encoder-decoder"],
+    ["CaseConverter", "case-converter"]
   ]  
 }

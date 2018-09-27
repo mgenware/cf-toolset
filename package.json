@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "fx23": "^2.0.2",
     "html-entities": "^1.2.1",
     "pupa": "^1.0.0",
     "vue": "^2.5.17",

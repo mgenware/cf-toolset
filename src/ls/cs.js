@@ -8,4 +8,13 @@ window.cft_ls = {
   data: '数据',
   showUnicodeChars: '显示 Unicode 字符',
   hideUnicodeChars: '隐藏 Unicode 字符',
+  uppercaseBtn: '大小',
+  lowercaseBtn: '小写',
+  capitalizedBtn: '首字母大写',
+  sentenceCaseBtn: '每句首字母大写',
+  HTMLDataEncoderDecoder: 'HTML 数据编码/解码',
+  XMLDataEncoderDecoder: 'XML 数据编码/解码',
+  URLDataEncoderDecoder: 'URL 数据编码/解码',
+  URLUnicodeTransformer: '显示/隐藏 URL 中的 Unicode 字符',
+  CaseConverter: '大小写转换器',
 };
