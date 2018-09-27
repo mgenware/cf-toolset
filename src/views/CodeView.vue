@@ -1,7 +1,5 @@
 <template>
-<pre>
-  <code>{{content}}</code>
-</pre>
+<pre><code>{{content}}</code></pre>
 </template>
 
 <script lang="ts">
