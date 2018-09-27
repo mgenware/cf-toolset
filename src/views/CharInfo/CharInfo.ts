@@ -7,7 +7,7 @@ export default class CharInfo {
     const chars = s.length;
     let spaces = 0, lines = 0;
     for (let i = 0; i < chars; i++) {
-      let c = s.charAt(i);
+      const c = s.charAt(i);
       if (/\s/.test(c)) {
         spaces++;
         if (c === '\n') {
