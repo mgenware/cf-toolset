@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+import './ls/en.js';
+import ls from './ls';
 
+Vue.prototype.$ls = ls;
 Vue.config.productionTip = false;
 
 new Vue({

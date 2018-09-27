@@ -9,12 +9,14 @@
     "build-lib": "vue-cli-service build --target lib --name cft ./src/main.ts"
   },
   "dependencies": {
+    "pupa": "^1.0.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@types/pupa": "^1.0.0",
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-plugin-typescript": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
