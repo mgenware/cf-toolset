@@ -1,27 +1,14 @@
 <template>
-<div>
-  <div class="field">
-    <label class="label">{{$ls.data}}</label>
-    <div class="control">
-      <CodeEditor :content.sync="input" />
-    </div>
+<div class="content">
+  <h2>{{$ls.HTMLDataEncoderDecoder}}</h2>
+  <CodeEditor :content.sync="input" />
+
+  <div class="buttons">
+    <button class="button is-primary" @click="handleEncode">{{$ls.encode}}</button>
+    <button class="button is-primary" @click="handleDecode">{{$ls.decode}}</button>
   </div>
 
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-primary" @click="handleEncode">{{$ls.encode}}</button>
-    </div>
-    <div class="control">
-      <button class="button is-primary" @click="handleDecode">{{$ls.decode}}</button>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">{{$ls.output}}</label>
-    <div class="control">
-      <CodeView :content="result" />
-    </div>
-  </div>
+  <CodeView :content="result" />
 </div>
 </template>
 
@@ -37,7 +24,7 @@ const entities = new AllHtmlEntities();
     CodeEditor, CodeView,
   },
 })
-export default class URLDataEncoderDecoder extends Vue {
+export default class HTMLDataEncoderDecoder extends Vue {
   @Prop() content!: string;
 
   input = '';

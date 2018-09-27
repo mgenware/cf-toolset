@@ -1,34 +1,16 @@
 <template>
 <div class="content">
   <h2>{{$ls.CaseConverter}}</h2>
-  <div class="field">
-    <label class="label">{{$ls.data}}</label>
-    <div class="control">
-      <CodeEditor :content.sync="input" />
-    </div>
+  <CodeEditor :content.sync="input" />
+
+  <div class="buttons">
+    <button class="button is-primary" @click="handleUpperCase">{{$ls.uppercaseBtn}}</button>
+    <button class="button is-primary" @click="handleLowerCase">{{$ls.lowercaseBtn}}</button>
+    <button class="button is-primary" @click="handleCapitalized">{{$ls.capitalizedBtn}}</button>
+    <button class="button is-primary" @click="handleSentenceCase">{{$ls.sentenceCaseBtn}}</button>
   </div>
 
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-primary" @click="handleUpperCase">{{$ls.uppercaseBtn}}</button>
-    </div>
-    <div class="control">
-      <button class="button is-primary" @click="handleLowerCase">{{$ls.lowercaseBtn}}</button>
-    </div>
-    <div class="control">
-      <button class="button is-primary" @click="handleCapitalized">{{$ls.capitalizedBtn}}</button>
-    </div>
-    <div class="control">
-      <button class="button is-primary" @click="handleSentenceCase">{{$ls.sentenceCaseBtn}}</button>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">{{$ls.output}}</label>
-    <div class="control">
-      <CodeView :content="result" />
-    </div>
-  </div>
+  <CodeView :content="result" />
 </div>
 </template>
 

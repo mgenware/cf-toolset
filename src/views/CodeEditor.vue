@@ -1,5 +1,6 @@
 <template>
 <div>
+  <label class="label">{{label || $ls.data}}</label>
   <textarea
     class="editor"
     rows="10"
@@ -14,6 +15,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class CodeEditor extends Vue {
   @Prop() content!: string;
+  @Prop() label!: string;
 }
 </script>
 

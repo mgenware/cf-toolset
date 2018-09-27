@@ -1,27 +1,14 @@
 <template>
-<div>
-  <div class="field">
-    <label class="label">{{$ls.data}}</label>
-    <div class="control">
-      <CodeEditor :content.sync="input" />
-    </div>
+<div class="content">
+  <h2>{{$ls.URLUnicodeTransformer}}</h2>
+  <CodeEditor :content.sync="input" />
+
+  <div class="buttons">
+    <button class="button is-primary" @click="handleShow">{{$ls.showUnicodeChars}}</button>
+    <button class="button is-primary" @click="handleHide">{{$ls.hideUnicodeChars}}</button>
   </div>
 
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-primary" @click="handleShow">{{$ls.showUnicodeChars}}</button>
-    </div>
-    <div class="control">
-      <button class="button is-primary" @click="handleHide">{{$ls.hideUnicodeChars}}</button>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">{{$ls.output}}</label>
-    <div class="control">
-      <CodeView :content="result" />
-    </div>
-  </div>
+  <CodeView :content="result" />
 </div>
 </template>
 
@@ -35,7 +22,7 @@ import CodeView from '@/views/CodeView.vue';
     CodeEditor, CodeView,
   },
 })
-export default class URLUnicodeTranformer extends Vue {
+export default class URLUnicodeTransformer extends Vue {
   @Prop() content!: string;
 
   input = '';
