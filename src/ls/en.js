@@ -1,4 +1,4 @@
-window.cft_ls = {
+module.exports = {
   chars: 'Characters',
   charsNoSpaces: 'Characters (no spaces)',
   lines: 'Lines',
