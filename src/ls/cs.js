@@ -17,4 +17,7 @@ module.exports = {
   URLDataEncoderDecoder: 'URL 数据编码/解码',
   URLUnicodeTransformer: '显示/隐藏 URL 中的 Unicode 字符',
   CaseConverter: '大小写转换器',
+  copy: '复制',
+  copied: '复制成功',
+  copyNotSupported: '您的浏览器不支持自动复制，请手动复制。',
 };

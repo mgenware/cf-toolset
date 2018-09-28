@@ -17,4 +17,7 @@ module.exports = {
   URLDataEncoderDecoder: 'URL Data Encoder/Decoder',
   URLUnicodeTransformer: 'Show/Hide URL Unicode Chars',
   CaseConverter: 'Case Converter',
+  copy: 'Copy',
+  copied: 'Copied',
+  copyNotSupported: 'Your browser does not support copy API, please copy manually.',
 };
