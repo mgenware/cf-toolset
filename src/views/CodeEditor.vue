@@ -18,7 +18,7 @@ import CharsCounterData from '@/views/CharsCounter/CharsCounterData';
 @Component({
   components: {
     CharsCounterView,
-  }
+  },
 })
 export default class CodeEditor extends Vue {
   @Prop() content!: string;
