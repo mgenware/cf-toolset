@@ -20,4 +20,5 @@ module.exports = {
   copy: '复制',
   copied: '复制成功',
   copyNotSupported: '您的浏览器不支持自动复制，请手动复制。',
+  CharacterLineCounter: '字数/行数统计',
 };

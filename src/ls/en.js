@@ -20,4 +20,5 @@ module.exports = {
   copy: 'Copy',
   copied: 'Copied',
   copyNotSupported: 'Your browser does not support copy API, please copy manually.',
+  CharacterLineCounter: 'Character/Line Counter',
 };

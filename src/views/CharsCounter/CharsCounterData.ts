@@ -1,7 +1,7 @@
-export default class CharInfo {
-  static count(s?: string): CharInfo {
+export default class CharsCounterData {
+  static count(s?: string): CharsCounterData {
     if (!s) {
-      return new CharInfo(0, 0, 0);
+      return new CharsCounterData(0, 0, 0);
     }
 
     const chars = s.length;
@@ -17,7 +17,7 @@ export default class CharInfo {
     }
     lines++;
 
-    return new CharInfo(chars, chars - spaces, lines);
+    return new CharsCounterData(chars, chars - spaces, lines);
   }
 
   constructor(

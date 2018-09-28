@@ -8,11 +8,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import CharInfo from './CharInfo';
+import CharsCounterData from './CharsCounterData';
 
 @Component
-export default class CharInfoView extends Vue {
-  @Prop() info!: CharInfo;
+export default class CharsCounterView extends Vue {
+  @Prop() info!: CharsCounterData;
 }
 </script>
 
