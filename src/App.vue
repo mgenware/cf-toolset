@@ -8,7 +8,12 @@
       </div>
       <NavBarView />
     </nav>
-    <router-view/>
+
+    <section class="section">
+      <div class="container">
+        <router-view/>
+      </div>
+    </section>
   </div>
 </template>
 
