@@ -5,7 +5,7 @@
   <button
     class="button is-light"
     @click="handleCopy"
-    :disabled="copied"
+    :disabled="copyDone"
   >
     {{copyDone ? $ls.copied : $ls.copy}}
   </button>
