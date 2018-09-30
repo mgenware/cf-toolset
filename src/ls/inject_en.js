@@ -1,2 +1,2 @@
-import dict from './en';
+import dict from './en.mjs';
 window.cft_ls = dict;
