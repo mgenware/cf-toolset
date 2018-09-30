@@ -6,7 +6,7 @@ if (!isProd) {
 }
 
 module.exports = {
-  baseUrl: '/static/toolset/',
+  baseUrl: isProd ? '/static/toolset/' : '/',
   pages: {
     main: 'src/core_entry.ts',
     ls_cs: 'src/ls/inject_cs.js',
