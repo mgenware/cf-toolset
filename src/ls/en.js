@@ -1,4 +1,4 @@
-module.exports = {
+const dict = {
   chars: 'Characters',
   charsNoSpaces: 'Characters (no spaces)',
   lines: 'Lines',
@@ -24,3 +24,9 @@ module.exports = {
   toolset: 'ToolSet',
   feedback: 'Feedback',
 };
+
+if (window) {
+  window.cft_ls = dict;
+} else if (module) {
+  module.exports = dict;
+}

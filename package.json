@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build ./src/core_entry.ts",
+    "build": "vue-cli-service build && node ./listgen.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

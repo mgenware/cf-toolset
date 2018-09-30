@@ -1,4 +1,4 @@
-module.exports = {
+const dict = {
   chars: '总文字数',
   charsNoSpaces: '文字数 (无空格)',
   lines: '行数',
@@ -24,3 +24,9 @@ module.exports = {
   toolset: '工具箱',
   feedback: '反馈问题',
 };
+
+if (window) {
+  window.cft_ls = dict;
+} else if (module) {
+  module.exports = dict;
+}
