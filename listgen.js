@@ -12,8 +12,6 @@ function renderItem(name, urlName) {
 }
 
 (async () => {
-  console.log('- Generating templates...');
-
   let htmlEN = '';
   let htmlCS = '';
   for (const [name, urlName] of routes.routes) {
