@@ -1,1 +1,2 @@
-window.cft_ls = require('./cs');
+import dict from './cs';
+window.cft_ls = dict;

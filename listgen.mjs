@@ -1,9 +1,12 @@
-const routes = require('./src/routes.json');
-const fs = require('fs').promises;
-const lsEN = require('./src/ls/en');
-const lsCS = require('./src/ls/cs');
-const mkdirp = require('mkdirp');
-const { AllHtmlEntities } = require('html-entities');
+import routes from './src/routes.json';
+import _fs from 'fs';
+import mkdirp from 'mkdirp';
+import lsEN from './src/ls/en';
+import lsCS from './src/ls/cs';
+import htmlEntities from 'html-entities';
+
+const fs = _fs.promises;
+const AllHtmlEntities = htmlEntities.AllHtmlEntities;
 const entities = new AllHtmlEntities();
 
 function renderItem(name, urlName) {
@@ -12,7 +15,7 @@ function renderItem(name, urlName) {
 }
 
 (async () => {
-  console.log('> Generating list...')
+  console.log('> Generating list...');
 
   let htmlEN = '';
   let htmlCS = '';

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   chars: 'Characters',
   charsNoSpaces: 'Characters (no spaces)',
   lines: 'Lines',
