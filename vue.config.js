@@ -6,10 +6,10 @@ if (!isProd) {
 }
 
 module.exports = {
+  baseUrl: '/static/toolset/',
   pages: {
     main: 'src/core_entry.ts',
-    ls_cs: 'src/ls/cs.js',
-    ls_en: 'src/ls/en.js',
+    ls_cs: 'src/ls/inject_cs.js',
+    ls_en: 'src/ls/inject_en.js',
   },
-  productionSourceMap: false,
 };
