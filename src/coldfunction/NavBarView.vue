@@ -31,5 +31,6 @@ import ls from '@/ls';
 })
 export default class NavBarView extends Vue {
   user = User.loadFromWindow();
+  signInURL = '/auth/in';
 }
 </script>
