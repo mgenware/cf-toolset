@@ -14,9 +14,9 @@ if (document.getElementById('m_nav_menu_app')) {
   }).$mount('#m_nav_menu_app');
 }
 
-if (document.getElementById('main-body')) {
+if (document.getElementById('cft_app')) {
   new Vue({
     router,
     render: (h) => h(App),
-  }).$mount('#main-body');
+  }).$mount('#cft_app');
 }

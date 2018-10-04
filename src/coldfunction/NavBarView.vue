@@ -29,7 +29,7 @@ import ls from '@/ls';
     BadgeView,
   },
 })
-export default class NavBarApp extends Vue {
+export default class NavBarView extends Vue {
   user = User.loadFromWindow();
 }
 </script>

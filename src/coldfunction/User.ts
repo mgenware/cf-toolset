@@ -12,7 +12,7 @@ export default class User {
     return null;
   }
 
-  constructor(
+  private constructor(
     public id: string,
     public nick: string,
     public profileURL: string,

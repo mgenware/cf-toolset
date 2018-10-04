@@ -3,7 +3,7 @@
   <label class="label">{{label || $ls.output}}</label>
   <pre ref="pre"><code>{{content}}</code></pre>
   <button
-    class="button is-light"
+    class="button is-light m-t-sm"
     @click="handleCopy"
     :disabled="copyDone"
   >
