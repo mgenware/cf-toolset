@@ -9,7 +9,7 @@
       <BadgeView :value="`${user.badge}`"/>
     </a>
     <a v-else :href="signInURL" class="navbar-item">
-      <img src="/static/img/user/login.svg" width="16" height="16"/>
+      <img src="/static/img/user/login.svg" width="16" height="16" />
       <span class="m-l-sm">{{$ls.signIn}}</span>
     </a>
   

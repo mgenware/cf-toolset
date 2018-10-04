@@ -23,4 +23,5 @@ export default {
   CharacterLineCounter: 'Character/Line Counter',
   toolset: 'ToolSet',
   feedback: 'Feedback',
+  signIn: 'Sign In',
 };

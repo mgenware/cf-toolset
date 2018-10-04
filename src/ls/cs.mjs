@@ -23,4 +23,5 @@ export default {
   CharacterLineCounter: '字数/行数统计',
   toolset: '工具箱',
   feedback: '反馈问题',
+  signIn: '登录',
 };
