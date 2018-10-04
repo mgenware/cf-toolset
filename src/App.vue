@@ -19,13 +19,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import NavBarView from './coldfunction/NavBarView.vue';
 
-@Component({
-  components: {
-    NavBarView,
-  },
-})
+@Component
 export default class App extends Vue {
 }
 </script>
