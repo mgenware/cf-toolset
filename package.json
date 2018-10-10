@@ -12,6 +12,7 @@
     "fx23": "^2.0.2",
     "html-entities": "^1.2.1",
     "pupa": "^1.0.0",
+    "vanilla-picker": "^2.6.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",

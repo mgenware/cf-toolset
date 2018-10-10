@@ -15,6 +15,6 @@ const routes = rawRoutes.routes.map((r: any) => {
 
 export default new Router({
   mode: 'history',
-  base: 'toolset',
+  base: process.env.NODE_ENV === 'production' ? 'toolset' : undefined,
   routes,
 });

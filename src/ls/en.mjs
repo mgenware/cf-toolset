@@ -24,4 +24,5 @@ export default {
   toolset: 'ToolSet',
   feedback: 'Feedback',
   signIn: 'Sign In',
+  ColorPickerConverter: 'Color Picker/Converter',
 };

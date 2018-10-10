@@ -5,6 +5,7 @@
     ["URLUnicodeTransformer", "url-unicode-transformer"],
     ["XMLDataEncoderDecoder", "xml-data-encoder-decoder"],
     ["CaseConverter", "case-converter"],
-    ["CharacterLineCounter", "character-line-counter"]
+    ["CharacterLineCounter", "character-line-counter"],
+    ["ColorPickerConverter", "color-picker-converter"]
   ]  
 }

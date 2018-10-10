@@ -24,4 +24,5 @@ export default {
   toolset: '工具箱',
   feedback: '反馈问题',
   signIn: '登录',
+  ColorPickerConverter: '颜色选择器/转换器',
 };

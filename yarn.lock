@@ -577,6 +577,10 @@
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.2.tgz#54c5a964462be3d4d78af631363c18d6fa91ac26"
 
+"@sphinxxxx/color-conversion@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@sphinxxxx/color-conversion/-/color-conversion-2.1.1.tgz#da281a9641eb3f699979432fe531bba520e3ffbb"
+
 "@types/html-entities@^1.2.16":
   version "1.2.16"
   resolved "https://registry.yarnpkg.com/@types/html-entities/-/html-entities-1.2.16.tgz#4d1fe208c4c33727ac4657e6f5d92bfe52427023"
@@ -2223,6 +2227,10 @@ dot-prop@^4.1.1:
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   dependencies:
     is-obj "^1.0.0"
+
+drag-tracker@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/drag-tracker/-/drag-tracker-1.0.0.tgz#9bd33d380bc3056db69bd5b3cf6e062fec58bd64"
 
 duplexer@^0.1.1:
   version "0.1.1"
@@ -6055,6 +6063,13 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vanilla-picker@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/vanilla-picker/-/vanilla-picker-2.6.0.tgz#4818e08c86f553116249cd3740603238aa839b3d"
+  dependencies:
+    "@sphinxxxx/color-conversion" "^2.1.1"
+    drag-tracker "^1.0.0"
 
 vary@~1.1.2:
   version "1.1.2"
