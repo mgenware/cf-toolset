@@ -1,23 +1,40 @@
 <template>
 <div class="content">
   <h2>{{$ls.ColorPickerConverter}}</h2>
-  <div ref="color_picker_area" :style="{ width: '100px' }">Click</div>
+  <p>
+    <a ref="color_picker_area"
+      :style="{ width: '100px' }"
+      class="button is-white">
+    </a>
+  </p>
+  <InlineCodeView label="RGB" :content="rgb" />
 </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import InlineCodeView from '@/views/InlineCodeView.vue';
 // tslint:disable-next-line
 const ColorPicker = require('vanilla-picker').default;
 
-@Component
+@Component({
+  components: {
+    InlineCodeView,
+  },
+})
 export default class ColorPickerConverter extends Vue {
+  rgb = '';
+
   mounted() {
-    const area = this.$refs.color_picker_area as HTMLDivElement;
-    const picker = new ColorPicker(area);
-    picker.onChange = (color: any) => {
-        area.style.background = color.rgbaString;
-    };
+    const parent = this.$refs.color_picker_area as HTMLDivElement;
+    const picker = new ColorPicker({
+      parent,
+      color: 'gray',
+      onChange: (color: any) => {
+        parent.style.background = color.rgbaString;
+        this.rgb = color.rgbString;
+      },
+    });
   }
 }
 </script>

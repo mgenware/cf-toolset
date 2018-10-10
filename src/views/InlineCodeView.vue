@@ -1,15 +1,15 @@
 <template>
-<div>
-  <label class="label">{{label || $ls.output}}</label>
-  <pre ref="pre"><code>{{content}}</code></pre>
+<span>
+  {{label || $ls.output}}
+  <code ref="code" class="m-l-sm">{{content}}</code>
   <button
-    class="button is-small is-light m-t-sm"
+    class="button is-small is-light m-l-sm"
     @click="handleCopy"
     :disabled="copyDone"
   >
     {{copyDone ? $ls.copied : $ls.copy}}
   </button>
-</div>
+</span>
 </template>
 
 <script lang="ts">
@@ -18,15 +18,15 @@ import ls from '@/ls';
 import { copyHelper } from '@/lib/clipboard';
 
 @Component
-export default class CodeView extends Vue {
+export default class InlineCodeView extends Vue {
   @Prop() content!: string;
   @Prop() label!: string;
 
-  preElement!: HTMLPreElement;
+  codeElement!: HTMLSpanElement;
   copyDone = false;
 
   mounted() {
-    this.preElement = this.$refs.pre as HTMLPreElement;
+    this.codeElement = this.$refs.code as HTMLSpanElement;
   }
 
   async handleCopy() {
