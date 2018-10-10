@@ -7,7 +7,14 @@
       class="button is-white">
     </a>
   </p>
-  <InlineCodeView label="RGB" :content="rgb" />
+  <InlineCodeView label="HEX(RGB)" :content="hex" /> <br/>
+  <InlineCodeView label="HEX(RGBA)" :content="hexa" /> <br/>
+  <InlineCodeView label="RGB" :content="rgb" /> <br/>
+  <InlineCodeView label="RGBA" :content="rgba" /> <br/>
+  <InlineCodeView label="HSL" :content="hsl" /> <br/>
+  <InlineCodeView label="HSLA" :content="hsla" /> <br/>
+  <InlineCodeView label="RGBA" :content="nRGBA" /> <br/>
+  <InlineCodeView label="HSLA" :content="nHSLA" /> <br/>
 </div>
 </template>
 
@@ -24,6 +31,13 @@ const ColorPicker = require('vanilla-picker').default;
 })
 export default class ColorPickerConverter extends Vue {
   rgb = '';
+  rgba = '';
+  hsl = '';
+  hsla = '';
+  hex = '';
+  hexa = '';
+  nRGBA = '';
+  nHSLA = '';
 
   mounted() {
     const parent = this.$refs.color_picker_area as HTMLDivElement;
@@ -33,6 +47,15 @@ export default class ColorPickerConverter extends Vue {
       onChange: (color: any) => {
         parent.style.background = color.rgbaString;
         this.rgb = color.rgbString;
+        this.rgba = color.rgbaString;
+        this.hsl = color.hslString;
+        this.hsla = color.hslaString;
+        this.hexa = color.hex;
+        if (this.hexa && this.hexa.length >= 7) {
+          this.hex = this.hexa.substr(0, 7);
+        }
+        this.nRGBA = color.rgba.join(', ');
+        this.nHSLA = color.hsla.join(', ');
       },
     });
   }
