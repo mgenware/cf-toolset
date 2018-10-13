@@ -5,6 +5,7 @@
     class="editor"
     rows="10"
     @input="handleInputChange"
+    :style="{ padding: '8px' }"
   />
   <CharsCounterView :info="charsInfo" />
 </div>
