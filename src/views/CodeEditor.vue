@@ -1,13 +1,14 @@
 <template>
 <div>
-  <label class="label">{{label || $ls.data}}</label>
+  <label v-if="label" class="label">{{label}}</label>
   <textarea
     class="editor"
     rows="10"
+    v-model="internalContent"
     @input="handleInputChange"
     :style="{ padding: '8px' }"
   />
-  <CharsCounterView :info="charsInfo" />
+  <CharsCounterView v-if="!disableCharInfo" :info="charsInfo" />
 </div>
 </template>
 
@@ -24,12 +25,17 @@ import CharsCounterData from '@/views/CharsCounter/CharsCounterData';
 export default class CodeEditor extends Vue {
   @Prop() content!: string;
   @Prop() label!: string;
+  @Prop({ default: false }) disableCharInfo!: boolean;
+
   charsInfo = CharsCounterData.count('');
+  internalContent = this.content;
 
   handleInputChange(e: any) {
     const text = e.target.value;
     this.$emit('update:content', text);
-    this.charsInfo = CharsCounterData.count(text);
+    if (!this.disableCharInfo) {
+      this.charsInfo = CharsCounterData.count(text);
+    }
   }
 }
 </script>
