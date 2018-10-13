@@ -11,6 +11,7 @@
     "bulma": "^0.7.1",
     "fx23": "^2.0.2",
     "html-entities": "^1.2.1",
+    "prettier": "^1.14.3",
     "pupa": "^1.0.0",
     "vanilla-picker": "^2.6.0",
     "vue": "^2.5.17",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@types/html-entities": "^1.2.16",
+    "@types/prettier": "^1.13.2",
     "@types/pupa": "^1.0.0",
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-plugin-typescript": "^3.0.3",

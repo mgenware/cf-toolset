@@ -25,4 +25,6 @@ export default {
   feedback: 'Feedback',
   signIn: 'Sign In',
   ColorPickerConverter: 'Color Picker/Converter',
+  prettify: 'Format/Prettify',
+  JavaScriptFormatter: 'JavaScript Format/Prettify',
 };

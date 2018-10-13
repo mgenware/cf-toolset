@@ -25,4 +25,6 @@ export default {
   feedback: '反馈问题',
   signIn: '登录',
   ColorPickerConverter: '颜色选择器/转换器',
+  prettify: '格式化/美化',
+  JavaScriptFormatter: 'JavaScript 格式化/美化',
 };

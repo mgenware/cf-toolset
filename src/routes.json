@@ -6,6 +6,7 @@
     ["XMLDataEncoderDecoder", "xml-data-encoder-decoder"],
     ["CaseConverter", "case-converter"],
     ["CharacterLineCounter", "character-line-counter"],
-    ["ColorPickerConverter", "color-picker-converter"]
+    ["ColorPickerConverter", "color-picker-converter"],
+    ["JavaScriptFormatter", "javascript-formatter"]
   ]  
 }
