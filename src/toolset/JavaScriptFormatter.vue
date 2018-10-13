@@ -3,7 +3,12 @@
   <h2>{{$ls.JavaScriptFormatter}}</h2>
   <CodeEditor :content.sync="input" />
 
-  <div class="buttons">
+  <details>
+    <summary class="is-size-4">{{$ls.options}} <a href="https://prettier.io/docs/en/options.html">[{{$ls.docs}}]</a></summary>
+    <CodeEditor label="" :content.sync="optionJSON" :disableCharInfo="true" />
+  </details>
+
+  <div class="buttons m-t-md">
     <button class="button is-primary" @click="handleFormat">{{$ls.prettify}}</button>
   </div>
 
@@ -19,6 +24,7 @@ import CodeView from '@/views/CodeView.vue';
 const prettier = require('prettier/standalone');
 // tslint:disable-next-line
 const plugins = [require('prettier/parser-babylon')];
+import { formatJSONObject } from '@/lib/dataUtils';
 
 @Component({
   components: {
@@ -36,6 +42,7 @@ export default class JavaScriptFormatter extends Vue {
 
   input = '';
   result = '';
+  optionJSON = formatJSONObject(this.opts);
 
   handleFormat() {
     if (!this.input) {

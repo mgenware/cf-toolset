@@ -27,4 +27,6 @@ export default {
   ColorPickerConverter: 'Color Picker/Converter',
   prettify: 'Format/Prettify',
   JavaScriptFormatter: 'JavaScript Format/Prettify',
+  options: 'Options',
+  docs: 'Docs',
 };
