@@ -26,10 +26,11 @@ export default {
   signIn: 'Sign In',
   ColorPickerConverter: 'Color Picker/Converter',
   prettify: 'Format/Prettify',
-  JavaScriptFormatter: 'JavaScript Format/Prettify',
+  JavaScriptFormatter: 'JavaScript Formatter/Prettifier',
   options: 'Options',
   docs: 'Docs',
   reset: 'Reset',
   errorTitle: 'Oops!',
   invalidOptsJSON: 'Invalid options JSON value',
+  TypeScriptFormatter: 'TypeScript Formatter/Prettifier',
 };

@@ -7,6 +7,7 @@
     ["CaseConverter", "case-converter"],
     ["CharacterLineCounter", "character-line-counter"],
     ["ColorPickerConverter", "color-picker-converter"],
-    ["JavaScriptFormatter", "javascript-formatter"]
+    ["JavaScriptFormatter", "javascript-formatter"],
+    ["TypeScriptFormatter", "typescript-formatter"]
   ]  
 }
