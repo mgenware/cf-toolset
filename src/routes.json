@@ -8,6 +8,7 @@
     ["CharacterLineCounter", "character-line-counter"],
     ["ColorPickerConverter", "color-picker-converter"],
     ["JavaScriptFormatter", "javascript-formatter"],
-    ["TypeScriptFormatter", "typescript-formatter"]
+    ["TypeScriptFormatter", "typescript-formatter"],
+    ["CSSFormatter", "css-formatter"]
   ]  
 }

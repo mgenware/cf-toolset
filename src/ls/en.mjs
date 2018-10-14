@@ -33,4 +33,5 @@ export default {
   errorTitle: 'Oops!',
   invalidOptsJSON: 'Invalid options JSON value',
   TypeScriptFormatter: 'TypeScript Formatter/Prettifier',
+  CSSFormatter: 'CSS Formatter/Prettifier',
 };
