@@ -12,4 +12,5 @@ module.exports = {
     ls_cs: 'src/ls/inject_cs.js',
     ls_en: 'src/ls/inject_en.js',
   },
+  productionSourceMap: false,
 };
