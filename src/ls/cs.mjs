@@ -29,4 +29,7 @@ export default {
   JavaScriptFormatter: 'JavaScript 格式化/美化',
   options: '选项',
   docs: '文档',
+  reset: '重置',
+  errorTitle: '错误',
+  invalidOptsJSON: '选项不是正确的JSON',
 };

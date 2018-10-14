@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import CharsCounterView from '@/views/CharsCounter/CharsCounterView.vue';
 import CharsCounterData from '@/views/CharsCounter/CharsCounterData';
 
@@ -36,6 +36,11 @@ export default class CodeEditor extends Vue {
     if (!this.disableCharInfo) {
       this.charsInfo = CharsCounterData.count(text);
     }
+  }
+  
+  @Watch('content')
+  onContentChanged(val: string) {
+    this.internalContent = val;
   }
 }
 </script>

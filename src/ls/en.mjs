@@ -29,4 +29,7 @@ export default {
   JavaScriptFormatter: 'JavaScript Format/Prettify',
   options: 'Options',
   docs: 'Docs',
+  reset: 'Reset',
+  errorTitle: 'Oops!',
+  invalidOptsJSON: 'Invalid options JSON value',
 };

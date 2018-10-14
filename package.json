@@ -13,6 +13,7 @@
     "html-entities": "^1.2.1",
     "prettier": "^1.14.3",
     "pupa": "^1.0.0",
+    "sweetalert2": "^7.28.5",
     "vanilla-picker": "^2.6.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
