@@ -2,11 +2,10 @@
 <div>
   <label v-if="label" class="label">{{label}}</label>
   <textarea
-    class="editor"
+    class="editor textarea"
     rows="10"
     v-model="internalContent"
     @input="handleInputChange"
-    :style="{ padding: '8px' }"
   />
   <CharsCounterView v-if="!disableCharInfo" :info="charsInfo" />
 </div>
