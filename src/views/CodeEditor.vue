@@ -37,7 +37,7 @@ export default class CodeEditor extends Vue {
       this.charsInfo = CharsCounterData.count(text);
     }
   }
-  
+
   @Watch('content')
   onContentChanged(val: string) {
     this.internalContent = val;
