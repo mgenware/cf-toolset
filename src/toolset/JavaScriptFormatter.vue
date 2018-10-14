@@ -4,6 +4,7 @@
     :title="$ls.JavaScriptFormatter"
     :opts="opts"
     :coreOpts="coreOpts"
+    lang="javascript"
   />
 </div>
 </template>

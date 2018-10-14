@@ -8,7 +8,7 @@
     <button class="button is-primary" @click="handleFormat">{{$ls.prettify}}</button>
   </div>
 
-  <CodeView :content="result" />
+  <CodeView :content="result" :lang="lang" />
 </div>
 </template>
 
@@ -30,6 +30,7 @@ export default class PrettierFormatter extends Vue {
   @Prop() title!: string;
   @Prop() opts!: any;
   @Prop() coreOpts!: any;
+  @Prop() lang!: string;
 
   input = '';
   result = '';
