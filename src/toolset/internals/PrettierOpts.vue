@@ -1,6 +1,6 @@
 <template>
 <details>
-  <summary class="is-size-4">{{$ls.options}} <a href="https://prettier.io/docs/en/options.html">[{{$ls.docs}}]</a></summary>
+  <summary class="is-size-4">{{$ls.options}} <a href="https://prettier.io/docs/en/options.html" target="_blank">[{{$ls.docs}}]</a></summary>
   <CodeEditor label="" :content.sync="internalContent" :disableCharInfo="true" />
   <button class="button is-small is-light" @click="handleReset">{{$ls.reset}}</button>
 </details>
