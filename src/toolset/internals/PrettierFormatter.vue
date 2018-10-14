@@ -20,6 +20,7 @@ import PrettierOpts from './PrettierOpts.vue';
 // tslint:disable-next-line
 const prettier = require('prettier/standalone');
 import { formatJSONObject } from '@/lib/dataUtils';
+import { error } from '@/lib/alert';
 
 @Component({
   components: {
@@ -36,17 +37,21 @@ export default class PrettierFormatter extends Vue {
   result = '';
 
   handleFormat() {
-    const opts = (this.$refs.opts as PrettierOpts).getOptions();
-    if (!opts) {
-      return;
-    }
-    if (!this.input) {
-      this.result = '';
-      return;
-    }
+    try {
+      const opts = (this.$refs.opts as PrettierOpts).getOptions();
+      if (!opts) {
+        return;
+      }
+      if (!this.input) {
+        this.result = '';
+        return;
+      }
 
-    Object.assign(opts, this.coreOpts);
-    this.result = prettier.format(this.input, opts);
+      Object.assign(opts, this.coreOpts);
+      this.result = prettier.format(this.input, opts);
+    } catch (ex) {
+      error(ex.message);
+    }
   }
 }
 </script>
