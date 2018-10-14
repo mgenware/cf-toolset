@@ -34,4 +34,5 @@ export default {
   invalidOptsJSON: '选项不是正确的JSON',
   TypeScriptFormatter: 'TypeScript 格式化/美化',
   CSSFormatter: 'CSS 格式化/美化',
+  MarkdownFormatter: 'Markdown 格式化/美化',
 };

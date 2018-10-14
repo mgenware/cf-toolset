@@ -9,6 +9,7 @@
     ["ColorPickerConverter", "color-picker-converter"],
     ["JavaScriptFormatter", "javascript-formatter"],
     ["TypeScriptFormatter", "typescript-formatter"],
-    ["CSSFormatter", "css-formatter"]
+    ["CSSFormatter", "css-formatter"],
+    ["MarkdownFormatter", "markdown-formatter"]
   ]  
 }

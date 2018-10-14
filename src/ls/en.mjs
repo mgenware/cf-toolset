@@ -34,4 +34,5 @@ export default {
   invalidOptsJSON: 'Invalid options JSON value',
   TypeScriptFormatter: 'TypeScript Formatter/Prettifier',
   CSSFormatter: 'CSS Formatter/Prettifier',
+  MarkdownFormatter: 'Markdown Formatter/Prettifier',
 };
