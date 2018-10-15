@@ -1,7 +1,7 @@
 <template>
 <div class="content">
   <h2>{{$ls.CharacterLineCounter}}</h2>
-  <CodeEditor />
+  <CodeEditor autofocus />
 </div>
 </template>
 

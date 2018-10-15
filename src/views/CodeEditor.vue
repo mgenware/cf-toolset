@@ -4,6 +4,7 @@
   <textarea
     class="editor textarea"
     rows="10"
+    :autofocus="autofocus"
     v-model="internalContent"
     @input="handleInputChange"
   />
@@ -12,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
+import { Component, Vue, Prop, Watch, Provide } from 'vue-property-decorator';
 import CharsCounterView from '@/views/CharsCounter/CharsCounterView.vue';
 import CharsCounterData from '@/views/CharsCounter/CharsCounterData';
 
@@ -25,6 +26,7 @@ export default class CodeEditor extends Vue {
   @Prop() content!: string;
   @Prop() label!: string;
   @Prop({ default: false }) disableCharInfo!: boolean;
+  @Prop() autofocus!: boolean;
 
   charsInfo = CharsCounterData.count('');
   internalContent = this.content || '';

@@ -1,7 +1,7 @@
 <template>
 <div class="content">
   <h2>{{$ls.HTMLDataEncoderDecoder}}</h2>
-  <CodeEditor :content.sync="input" />
+  <CodeEditor autofocus :content.sync="input" />
 
   <div class="buttons">
     <button class="button is-primary" @click="handleEncode">{{$ls.encode}}</button>

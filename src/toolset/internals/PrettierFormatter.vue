@@ -1,7 +1,7 @@
 <template>
 <div class="content">
   <h2>{{title}}</h2>
-  <CodeEditor :content.sync="input" />
+  <CodeEditor autofocus :content.sync="input" />
   <PrettierOpts ref="opts" :defaults="opts" />
 
   <div class="buttons m-t-md">
