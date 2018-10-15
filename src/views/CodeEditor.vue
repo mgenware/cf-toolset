@@ -27,7 +27,7 @@ export default class CodeEditor extends Vue {
   @Prop({ default: false }) disableCharInfo!: boolean;
 
   charsInfo = CharsCounterData.count('');
-  internalContent = this.content;
+  internalContent = this.content || '';
 
   handleInputChange(e: any) {
     const text = e.target.value;
