@@ -44,11 +44,15 @@ export default class CodeView extends Vue {
 
   @Watch('content')
   onContentChanged(val: string) {
-    const wind = window as any;
-    const Prism = wind.Prism;
-    if (this.lang && Prism && Prism.highlightAll) {
-      this.highlighted = Prism.highlight(this.content, Prism.languages[this.lang]);
-    } else {
+    try {
+      const wind = window as any;
+      const Prism = wind.Prism;
+      if (this.lang && Prism && Prism.highlightAll) {
+        this.highlighted = Prism.highlight(this.content, Prism.languages[this.lang]);
+      } else {
+        this.highlighted = '';
+      }
+    } catch (_) {
       this.highlighted = '';
     }
   }

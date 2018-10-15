@@ -35,4 +35,5 @@ export default {
   TypeScriptFormatter: 'TypeScript 格式化/美化',
   CSSFormatter: 'CSS 格式化/美化',
   MarkdownFormatter: 'Markdown 格式化/美化',
+  JSONFormatter: 'JSON 格式化/美化',
 };

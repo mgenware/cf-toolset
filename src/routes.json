@@ -10,6 +10,7 @@
     ["JavaScriptFormatter", "javascript-formatter"],
     ["TypeScriptFormatter", "typescript-formatter"],
     ["CSSFormatter", "css-formatter"],
-    ["MarkdownFormatter", "markdown-formatter"]
+    ["MarkdownFormatter", "markdown-formatter"],
+    ["JSONFormatter", "json-formatter"]
   ]  
 }

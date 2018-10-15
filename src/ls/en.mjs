@@ -35,4 +35,5 @@ export default {
   TypeScriptFormatter: 'TypeScript Formatter/Prettifier',
   CSSFormatter: 'CSS Formatter/Prettifier',
   MarkdownFormatter: 'Markdown Formatter/Prettifier',
+  JSONFormatter: 'JSON Formatter/Prettifier',
 };
