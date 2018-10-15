@@ -3,7 +3,7 @@
   <h2>{{$ls.ColorPickerConverter}}</h2>
   <p>
     <a ref="color_picker_area"
-      :style="{ width: '100px' }"
+      :style="{ width: '100px', border: '1px solid gray' }"
       class="button is-white">
     </a>
   </p>
