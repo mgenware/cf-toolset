@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "epic-spinners": "^1.0.3",
     "fx23": "^2.0.2",
     "html-entities": "^1.2.1",
     "prettier": "^1.14.3",
