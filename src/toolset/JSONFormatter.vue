@@ -27,6 +27,7 @@ export default class JSONFormatter extends Vue {
   };
 
   coreOpts = {
+    parser: 'json',
     plugins,
   };
 }
