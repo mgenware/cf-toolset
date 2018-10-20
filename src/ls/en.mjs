@@ -36,5 +36,5 @@ export default {
   CSSFormatter: 'CSS Formatter/Prettifier',
   MarkdownFormatter: 'Markdown Formatter/Prettifier',
   JSONFormatter: 'JSON Formatter/Prettifier',
-  DecodeUnicodeJSON: 'Decode Unicode in JSON',
+  DecodeUnicodeJSON: 'Decode Unicode (UTF-16) in JSON',
 };
