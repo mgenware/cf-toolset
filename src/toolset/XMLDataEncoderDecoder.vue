@@ -1,6 +1,11 @@
 <template>
 <div class="content">
   <h2>{{$ls.URLDataEncoderDecoder}}</h2>
+  <blockquote>
+    <p>{{$ls.examples}}</p>
+    <p><code>&lt;&quot;haha&quot;&gt;</code> <kbd>{{$ls.encode}}</kbd> <code>&amp;lt;&amp;quot;haha&amp;quot;&amp;gt;</code></p>
+    <p><code>&amp;lt;&amp;quot;haha&amp;quot;&amp;gt;</code> <kbd>{{$ls.decode}}</kbd> <code>&lt;&quot;haha&quot;&gt;</code></p>
+  </blockquote>
   <CodeEditor autofocus :content.sync="input" />
 
   <div class="buttons">
