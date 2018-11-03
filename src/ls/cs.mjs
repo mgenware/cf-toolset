@@ -38,4 +38,6 @@ export default {
   JSONFormatter: 'JSON 格式化/美化',
   DecodeUnicodeJSON: '解码 JSON 中的 Unicode (UTF-16)',
   examples: '示例',
+  JavaScriptExportAllNamedImports: 'JavaScript export 所有有名称的 import',
+  extract: '提取',
 };

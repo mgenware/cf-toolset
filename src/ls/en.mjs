@@ -38,4 +38,6 @@ export default {
   JSONFormatter: 'JSON Formatter/Prettifier',
   DecodeUnicodeJSON: 'Decode Unicode (UTF-16) in JSON',
   examples: 'Examples',
+  JavaScriptExportAllNamedImports: 'JavaScript export all named imports',
+  extract: 'Extract',
 };

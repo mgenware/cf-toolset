@@ -12,6 +12,7 @@
     ["CSSFormatter", "css-formatter"],
     ["MarkdownFormatter", "markdown-formatter"],
     ["JSONFormatter", "json-formatter"],
-    ["DecodeUnicodeJSON", "decode-unicode-json"]
+    ["DecodeUnicodeJSON", "decode-unicode-json"],
+    ["JavaScriptExportAllNamedImports", "javascript-export-all-named-imports"]
   ]  
 }
