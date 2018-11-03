@@ -39,7 +39,7 @@ export default function() {
   }
 
   // Modals
-  const rootEl = document.documentElement;
+  const rootEl = document.documentElement as HTMLElement;
   const $modals = getAll('.modal');
   const $modalButtons = getAll('.modal-button');
   const $modalCloses = getAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button');
