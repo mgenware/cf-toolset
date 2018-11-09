@@ -1,6 +1,10 @@
 <template>
 <div class="content">
   <h2>{{$ls.DecodeUnicodeJSON}}</h2>
+  <blockquote>
+    <p>{{$ls.examples}}</p>
+    <p><code>{&quot;emoji&quot;: &quot;\uD83D\uDE49\uD83E\uDD90&quot;}</code> <kbd>{{$ls.decode}}</kbd> <code>{ &quot;emoji&quot;: &quot;🙉🦐&quot; }</code></p>
+  </blockquote>
   <CodeEditor autofocus :content.sync="input" />
 
   <div class="buttons">

@@ -1,6 +1,10 @@
 <template>
 <div class="content">
   <h2>{{$ls.CaseConverter}}</h2>
+  <blockquote>
+    <p>{{$ls.examples}}</p>
+    <p><code>hello world</code> <kbd>{{$ls.capitalizedBtn}}</kbd> <code>Hello World</code></p>
+  </blockquote>
   <CodeEditor autofocus :content.sync="input" />
 
   <div class="buttons">
