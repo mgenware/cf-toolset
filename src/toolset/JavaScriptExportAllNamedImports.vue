@@ -3,8 +3,13 @@
   <h2>{{$ls.JavaScriptExportAllNamedImports}}</h2>
   <blockquote>
     <p>{{$ls.examples}}</p>
-    <p><code>😃🙉</code> <kbd>{{$ls.encode}}</kbd> <code>%F0%9F%98%83%F0%9F%99%89</code></p>
-    <p><code>%F0%9F%98%83%F0%9F%99%89</code> <kbd>{{$ls.decode}}</kbd> <code>😃🙉</code></p>
+    <p>
+      <CodeView :content="exampleSrc" lang="javascript" :hideCopyButton="true" label="" />
+    </p>
+    <p><kbd>{{$ls.decode}}</kbd></p>
+    <p>
+      <CodeView :content="exampleDest" lang="javascript" :hideCopyButton="true" label="" />
+    </p>
   </blockquote>
   <CodeEditor autofocus :content.sync="input" />
 
@@ -32,6 +37,18 @@ export default class JavaScriptExportAllNamedImports extends Vue {
 
   input = '';
   result = '';
+
+  exampleSrc = `const privateVar = 123;
+export const publicVar = 123;
+function privateFunc(x, y) {
+  return x + y;
+}
+export function publicFunc(x, y) {
+  return x + y;
+}
+export class Type {
+}`;
+  exampleDest = `export { Type, publicFunc, publicVar } from 'FILE_NAME';`;
 
   private handleExtract() {
     const { input } = this;

@@ -1,8 +1,9 @@
 <template>
 <div>
-  <label class="label">{{label || $ls.output}}</label>
+  <label class="label">{{label === undefined ? $ls.output : label}}</label>
   <pre ref="pre"><code v-if="highlighted" :class="lang ? `language-${lang}` : ''" v-html="highlighted" /><code v-else>{{content}}</code></pre>
   <button
+    v-if="!hideCopyButton"
     class="button is-small is-light m-t-sm"
     @click="handleCopy"
     :disabled="copyDone"
@@ -22,6 +23,7 @@ export default class CodeView extends Vue {
   @Prop() content!: string;
   @Prop() label!: string;
   @Prop() lang!: string;
+  @Prop() hideCopyButton!: boolean;
 
   preElement!: HTMLPreElement;
   copyDone = false;
@@ -42,7 +44,7 @@ export default class CodeView extends Vue {
     });
   }
 
-  @Watch('content')
+  @Watch('content', { immediate: true })
   onContentChanged(val: string) {
     try {
       const wind = window as any;
