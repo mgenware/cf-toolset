@@ -75,7 +75,7 @@ export class Type {
       }
       this.result = `export {\n${s}} fron 'FILE_NAME';`;
     } else {
-      this.result = `export { ${members.join(', ')} } fron 'FILE_NAME';`;
+      this.result = `export { ${members.join(', ')} } from 'FILE_NAME';`;
     }
   }
 }
