@@ -40,4 +40,6 @@ export default {
   examples: '示例',
   JavaScriptExportAllNamedImports: 'JavaScript export 所有有名称的 import',
   extract: '提取',
+  JSONMinifier: 'JSON 精简化',
+  minify: '精简化',
 };

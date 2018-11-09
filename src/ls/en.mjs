@@ -40,4 +40,6 @@ export default {
   examples: 'Examples',
   JavaScriptExportAllNamedImports: 'JavaScript export all named imports',
   extract: 'Extract',
+  JSONMinifier: 'JSON Minifier',
+  minify: 'Minify',
 };
