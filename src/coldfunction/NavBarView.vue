@@ -1,7 +1,7 @@
 <template>
 <div id="m_nav_menu" class="navbar-menu">
   <div class="navbar-end">
-    <a class="navbar-item" href="/toolset">{{$ls.toolSet}}</a>
+    <a class="navbar-item" href="/toolset">{{$ls.toolset}}</a>
 
     <a v-if="user" class="navbar-item" :href="user.profileURL">
       <img alt="" :src="user.avatarURL" width="20" height="20" class="border-radius-10 vertical-align-middle" />
