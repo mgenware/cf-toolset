@@ -3,7 +3,7 @@ function getAll(selector: any): HTMLElement[] {
   return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
 }
 
-export default function() {
+function setup() {
   // navbar
   // navbar burger click event
   const burger = document.getElementById('m_nav_burger');
@@ -86,3 +86,22 @@ export default function() {
     }
   });
 }
+
+// Run setup
+function ready(fn: () => void) {
+  const doc = document as any;
+  if (doc.attachEvent ? doc.readyState === 'complete' : doc.readyState !== 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+ready(() => {
+  try {
+    setup();
+  } catch (ex) {
+    // tslint:disable-next-line no-console
+    console.log(`Bulma setup failed, ${ex.message}`);
+  }
+});

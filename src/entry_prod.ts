@@ -3,6 +3,7 @@ import router from './router';
 import ls from './ls';
 import NavBarView from './coldfunction/NavBarView.vue';
 import App from './App.vue';
+import './bulmaSetup';
 
 Vue.prototype.$ls = ls;
 Vue.config.productionTip = false;
