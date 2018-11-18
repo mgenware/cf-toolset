@@ -73,7 +73,7 @@ export class Type {
       for (const m of members) {
         s += `  ${m},\n`;
       }
-      this.result = `export {\n${s}} fron 'FILE_NAME';`;
+      this.result = `export {\n${s}} from 'FILE_NAME';`;
     } else {
       this.result = `export { ${members.join(', ')} } from 'FILE_NAME';`;
     }
