@@ -6,7 +6,7 @@
     <p>
       <CodeView :content="exampleSrc" lang="javascript" :hideCopyButton="true" label="" />
     </p>
-    <p><kbd>{{$ls.decode}}</kbd></p>
+    <p><kbd>{{$ls.extract}}</kbd></p>
     <p>
       <CodeView :content="exampleDest" lang="javascript" :hideCopyButton="true" label="" />
     </p>
