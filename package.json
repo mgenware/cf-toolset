@@ -7,6 +7,10 @@
     "build": "vue-cli-service build && node --experimental-modules ./listgen.mjs",
     "lint": "vue-cli-service lint"
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "dependencies": {
     "bulma": "^0.7.2",
     "epic-spinners": "^1.0.4",
