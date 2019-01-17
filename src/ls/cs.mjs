@@ -24,7 +24,7 @@ export default {
   toolset: 'ToolSet 工具箱',
   feedback: '反馈问题',
   signIn: '登录',
-  ColorPickerConverter: '颜色选择器/转换器',
+  ColorPickerConverter: '颜色选择器/转换器 (RGBA/HSLA)',
   prettify: '格式化/美化',
   JavaScriptFormatter: 'JavaScript 格式化/美化',
   options: '选项',
