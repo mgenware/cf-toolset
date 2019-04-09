@@ -1,8 +1,8 @@
-import swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import ls from '@/ls';
 
-export function error(text: string, title = '') {
-  return swal({
+export async function error(text: string, title = '') {
+  return await Swal.fire({
     type: 'error',
     title: title || ls.errorTitle,
     text,
