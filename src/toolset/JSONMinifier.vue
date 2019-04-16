@@ -1,24 +1,26 @@
 <template>
-<div class="content">
-  <h2>{{$ls.JSONMinifier}}</h2>
-  <blockquote>
-    <p>{{$ls.examples}}</p>
-    <p>
-      <CodeView :content="exampleSrc" lang="javascript" :hideCopyButton="true" label="" />
-    </p>
-    <p><kbd>{{$ls.decode}}</kbd></p>
-    <p>
-      <CodeView :content="exampleDest" lang="javascript" :hideCopyButton="true" label="" />
-    </p>
-  </blockquote>
-  <CodeEditor autofocus :content.sync="input" />
+  <div class="content">
+    <h2>{{$ls.JSONMinifier}}</h2>
+    <blockquote>
+      <p>{{$ls.examples}}</p>
+      <p>
+        <CodeView :content="exampleSrc" lang="javascript" :hideCopyButton="true" label/>
+      </p>
+      <p>
+        <kbd>{{$ls.minify}}</kbd>
+      </p>
+      <p>
+        <CodeView :content="exampleDest" lang="javascript" :hideCopyButton="true" label/>
+      </p>
+    </blockquote>
+    <CodeEditor autofocus :content.sync="input"/>
 
-  <div class="buttons">
-    <button class="button is-primary" @click="handleMinify">{{$ls.minify}}</button>
+    <div class="buttons">
+      <button class="button is-primary" @click="handleMinify">{{$ls.minify}}</button>
+    </div>
+
+    <CodeView :content="result" lang="json"/>
   </div>
-
-  <CodeView :content="result" lang="json" />
-</div>
 </template>
 
 <script lang="ts">
@@ -29,7 +31,8 @@ import { error } from '@/lib/alert';
 
 @Component({
   components: {
-    CodeEditor, CodeView,
+    CodeEditor,
+    CodeView,
   },
 })
 export default class JSONMinifier extends Vue {
