@@ -1,4 +1,4 @@
-export default {
+window.cft_ls = {
   chars: 'Characters',
   charsNoSpaces: 'Characters (no spaces)',
   lines: 'Lines',
@@ -19,7 +19,8 @@ export default {
   CaseConverter: 'Case Converter',
   copy: 'Copy',
   copied: 'Copied',
-  copyNotSupported: 'Your browser does not support copy API, please copy manually.',
+  copyNotSupported:
+    'Your browser does not support copy API, please copy manually.',
   CharacterLineCounter: 'Character/Line Counter',
   toolset: 'ToolSet',
   feedback: 'Feedback',

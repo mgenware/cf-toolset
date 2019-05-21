@@ -1,11 +1,12 @@
-export default class CharsCounterData {
-  static count(s?: string): CharsCounterData {
+export default class CharCounterData {
+  static count(s?: string): CharCounterData {
     if (!s) {
-      return new CharsCounterData(0, 0, 0);
+      return new CharCounterData(0, 0, 0);
     }
 
     const chars = s.length;
-    let spaces = 0, lines = 0;
+    let spaces = 0,
+      lines = 0;
     for (let i = 0; i < chars; i++) {
       const c = s.charAt(i);
       if (/\s/.test(c)) {
@@ -17,7 +18,7 @@ export default class CharsCounterData {
     }
     lines++;
 
-    return new CharsCounterData(chars, chars - spaces, lines);
+    return new CharCounterData(chars, chars - spaces, lines);
   }
 
   constructor(

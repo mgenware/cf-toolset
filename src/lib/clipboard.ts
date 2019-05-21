@@ -1,4 +1,4 @@
-import ls from '@/ls';
+import ls from '../ls';
 
 export async function copyHelper(content: string, cb: (() => void) | null) {
   try {
