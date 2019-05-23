@@ -1,6 +1,7 @@
 import { LitElement, html, customElement, property } from 'lit-element';
 import ls from '../ls';
 import { copyHelper } from '../lib/clipboard';
+import './flat-button';
 
 @customElement('code-view')
 export class CodeView extends LitElement {
@@ -8,23 +9,23 @@ export class CodeView extends LitElement {
   @property() content = '';
   @property() highlighted = false;
   @property() hideCopyButton = false;
-  copyDone = false;
+  @property() private copyDone = false;
 
   render() {
     return html`
       <div>
         <label>${this.label || ls.output}</label>
         <pre><code>${this.content}</code></pre>
-        ${this.hideCopyButton
+        ${this.hideCopyButton || !this.content
           ? ''
           : html`
-              <button
-                class="button is-small is-light m-t-sm"
+              <flat-button
+                theme="gray small"
                 @click=${this.handleCopy}
-                disabled=${this.copyDone}
+                .disabled=${this.copyDone}
               >
                 ${this.copyDone ? ls.copied : ls.copy}
-              </button>
+              </flat-button>
             `}
       </div>
     `;

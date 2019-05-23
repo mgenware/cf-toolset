@@ -18,7 +18,6 @@ serve({
 <script src="../../dist/main.js"></script>
 </body>
 </html>`;
-      console.log(html);
       res.end(html);
     }),
   ],

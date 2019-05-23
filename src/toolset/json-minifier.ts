@@ -7,8 +7,8 @@ import { error } from '../lib/alert';
 @customElement('json-minifier')
 export class JSONMinifier extends LitElement {
   @property() content!: string;
-  input = '';
-  result = '';
+  @property() input = '';
+  @property() result = '';
   exampleSrc = `{
   "emoji": "\\uD83D\\uDE49\\uD83E\\uDD90",
   "list": [1, 2, 3, 4]
@@ -28,36 +28,34 @@ export class JSONMinifier extends LitElement {
           <p>${ls.examples}</p>
           <p>
             <code-view
-              content=${this.exampleSrc}
-              lang="js"
-              hideCopyButton=${true}
-            />
+              .content=${this.exampleSrc}
+              .lang="js"
+              .hideCopyButton=${true}
+            ></code-view>
           </p>
           <p>
             <kbd>${ls.minify}</kbd>
           </p>
           <p>
             <code-view
-              content=${this.exampleDest}
-              lang="js"
-              hideCopyButton=${true}
-            />
+              .content=${this.exampleDest}
+              .lang="js"
+              .hideCopyButton=${true}
+            ></code-view>
           </p>
         </blockquote>
 
         <code-editor
-          autofocus=${true}
-          content=${this.input}
-          onChange=${this.handleOnChange}
-        />
+          .autofocus=${true}
+          .content=${this.input}
+          @change=${this.handleOnChange}
+        ></code-editor>
 
-        <div class="buttons">
-          <button class="button is-primary" @click=${this.handleMinify}>
-            ${ls.minify}
-          </button>
-        </div>
+        <flat-button .theme="green" @click=${this.handleMinify}>
+          ${ls.minify}
+        </flat-button>
 
-        <code-view content=${this.result} lang="json" />
+        <code-view .content=${this.result} .lang="json"></code-view>
       </div>
     `;
   }
@@ -70,7 +68,7 @@ export class JSONMinifier extends LitElement {
     }
   }
 
-  private handleOnChange(val: string) {
-    this.input = val;
+  private handleOnChange(e: CustomEvent<string>) {
+    this.input = e.detail;
   }
 }

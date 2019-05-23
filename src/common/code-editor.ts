@@ -19,36 +19,34 @@ export class CodeEditor extends LitElement {
   @property() content = '';
   @property() autofocus = false;
   @property() disableCharInfo = false;
-  charsInfo = CharCounterData.count('');
-  @property() onChange: (value: string) => void = () => {};
+  @property() private charsInfo = CharCounterData.count('');
 
   render() {
-    console.log(' editor ', this.content);
     return html`
       <div>
         <label>${this.name}</label>
         <textarea
           class="editor"
           rows="10"
-          autofocus=${this.autofocus}
-          value=${this.content}
+          .autofocus=${this.autofocus}
+          .value=${this.content}
           @change=${this.handleChange}
           @input=${this.handleInputChange}
         ></textarea>
         ${this.disableCharInfo
           ? ''
           : html`
-              <char-counter data=${this.charsInfo} />
+              <char-counter .data=${this.charsInfo}></char-counter>
             `}
       </div>
     `;
   }
 
   private handleChange(e: any) {
-    console.log('on change ', this.onChange);
     const { value } = e.target;
     this.content = value;
-    this.onChange(this.content);
+    const event = new CustomEvent('change', { detail: value });
+    this.dispatchEvent(event);
   }
 
   private handleInputChange(e: any) {

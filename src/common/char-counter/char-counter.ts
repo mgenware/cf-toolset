@@ -20,7 +20,7 @@ export class CharCounter extends LitElement {
     `;
   }
 
-  @property() data!: CharCounterData;
+  @property() data = CharCounterData.count();
 
   render() {
     const { data } = this;
