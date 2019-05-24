@@ -63,7 +63,6 @@ export class FlatButton extends BaseElement {
   @property() disabled = false;
 
   render() {
-    console.log(' theme ', this.theme);
     return html`
       <button class=${this.theme} ?disabled=${this.disabled}>
         <slot></slot>

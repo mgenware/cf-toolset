@@ -19,7 +19,7 @@ export class CodeView extends BaseElement {
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
           Courier New, monospace;
         margin-bottom: 40px;
-        background: #f7f7f7;
+        background: #ededed;
         line-height: 1.5;
         max-height: 30rem;
         width: 100%;
@@ -41,7 +41,8 @@ export class CodeView extends BaseElement {
     return html`
       <div>
         <h3>${this.label}</h3>
-        <pre><code>${this.content}</code></pre>
+        <pre class=${`language-${this.lang || 'none'}`}><code>${this
+          .content}</code></pre>
         ${this.hideCopyButton || !this.content
           ? ''
           : html`
