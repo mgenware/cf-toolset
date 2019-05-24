@@ -1,12 +1,13 @@
-import { LitElement, html, customElement, property } from 'lit-element';
+import { html, customElement, property } from 'lit-element';
 import '../common/code-view';
 import '../common/code-editor';
 import ls from '../ls';
 import { error } from '../lib/alert';
+import BaseElement from '../common/base-element';
 
 @customElement('json-minifier')
-export class JSONMinifier extends LitElement {
-  @property() content!: string;
+export class JSONMinifier extends BaseElement {
+  @property() content = '';
   @property() input = '';
   @property() result = '';
   exampleSrc = `{
@@ -17,12 +18,7 @@ export class JSONMinifier extends LitElement {
 
   render() {
     return html`
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
-      />
-
-      <div class="content">
+      <div>
         <h2>${ls.JSONMinifier}</h2>
         <blockquote>
           <p>${ls.examples}</p>
@@ -55,7 +51,11 @@ export class JSONMinifier extends LitElement {
           ${ls.minify}
         </flat-button>
 
-        <code-view .content=${this.result} .lang="json"></code-view>
+        <code-view
+          .lang="json"
+          .label=${ls.output}
+          .content=${this.result}
+        ></code-view>
       </div>
     `;
   }

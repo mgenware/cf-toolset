@@ -15,6 +15,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "fx23": "^2.0.2",
     "lit-element": "^2.1.0",
     "pupa": "^2.0.0",
     "sweetalert2": "^8.11.1"

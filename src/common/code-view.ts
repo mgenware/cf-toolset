@@ -1,10 +1,36 @@
-import { LitElement, html, customElement, property } from 'lit-element';
+import { html, customElement, property, css } from 'lit-element';
 import ls from '../ls';
 import { copyHelper } from '../lib/clipboard';
 import './flat-button';
+import BaseElement from './base-element';
 
 @customElement('code-view')
-export class CodeView extends LitElement {
+export class CodeView extends BaseElement {
+  static get styles() {
+    return css`
+      pre[class*='language-'] {
+        color: #303030; /* default text color is required and related to current theme */
+        padding: 1rem;
+        margin: 0.5rem 0;
+        overflow: auto;
+        border: 0;
+        border-radius: 10px;
+
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+          Courier New, monospace;
+        margin-bottom: 40px;
+        background: #f7f7f7;
+        line-height: 1.5;
+        max-height: 30rem;
+        width: 100%;
+        max-width: 100%;
+        hyphens: none;
+        tab-size: 4;
+        white-space: pre;
+      }
+    `;
+  }
+
   @property() label = '';
   @property() content = '';
   @property() highlighted = false;
@@ -14,7 +40,7 @@ export class CodeView extends LitElement {
   render() {
     return html`
       <div>
-        <label>${this.label || ls.output}</label>
+        <h3>${this.label}</h3>
         <pre><code>${this.content}</code></pre>
         ${this.hideCopyButton || !this.content
           ? ''

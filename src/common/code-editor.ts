@@ -1,9 +1,10 @@
-import { LitElement, html, property, customElement, css } from 'lit-element';
+import { html, property, customElement, css } from 'lit-element';
 import './char-counter/char-counter';
 import CharCounterData from './char-counter/charCounterData';
+import BaseElement from './base-element';
 
 @customElement('code-editor')
-export class CodeEditor extends LitElement {
+export class CodeEditor extends BaseElement {
   static get styles() {
     return css`
       :host .editor {

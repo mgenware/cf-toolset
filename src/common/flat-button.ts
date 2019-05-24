@@ -1,14 +1,15 @@
-import { LitElement, html, customElement, css, property } from 'lit-element';
+import { html, customElement, css, property } from 'lit-element';
+import BaseElement from './base-element';
 
 @customElement('flat-button')
-export class FlatButton extends LitElement {
+export class FlatButton extends BaseElement {
   // Styles are based on https://www.w3schools.com/css/css3_buttons.asp
   static get styles() {
     return css`
       button {
-        background-color: #4caf50; /* Green */
+        background-color: #e7e7e7;
+        color: black;
         border: none;
-        color: white;
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
@@ -26,7 +27,6 @@ export class FlatButton extends LitElement {
       button:active {
         filter: brightness(85%);
       }
-
       button:disabled {
         pointer-events: none;
         background-color: #e7e7e7;

@@ -633,6 +633,11 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
+fx23@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/fx23/-/fx23-2.0.2.tgz#4b28a8e74a9fcf840757bca82cf1b578a68d951d"
+  integrity sha512-azTd1etqCvs8o5WsR8iwPVw24sZounSqdNm7jQTpSmjE6QBN28rotSZPfnWSBJcEOZ2Z9WJ5fQTS6HmvsbbODQ==
+
 fx87@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fx87/-/fx87-1.0.0.tgz#859e51f24a04403d23fc603c3c437e1212710c06"
