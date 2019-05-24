@@ -15,7 +15,7 @@ export class CSSFormatter extends BaseElement {
   };
 
   forcedOpts = {
-    parser: 'postcss',
+    parser: 'css',
     plugins,
   };
 
