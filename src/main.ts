@@ -3,3 +3,4 @@ import styles from './common/styles';
 
 import './toolset/json-minifier';
 import './toolset/case-converter';
+import './toolset/css-formatter';

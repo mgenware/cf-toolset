@@ -7,7 +7,10 @@ import BaseElement from './base-element';
 export class CodeEditor extends BaseElement {
   static get styles() {
     return css`
-      :host .editor {
+      .root {
+        margin-bottom: 1rem;
+      }
+      .editor {
         font-size: 15px;
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
           Courier New, monospace;
@@ -24,7 +27,7 @@ export class CodeEditor extends BaseElement {
 
   render() {
     return html`
-      <div>
+      <div class="root">
         <label>${this.name}</label>
         <textarea
           class="editor"

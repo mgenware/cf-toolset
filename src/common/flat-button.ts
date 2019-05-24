@@ -35,19 +35,22 @@ export class FlatButton extends BaseElement {
 
       .green {
         background-color: #4caf50;
+        color: white;
       } /* Green */
       .blue {
         background-color: #008cba;
+        color: white;
       } /* Blue */
       .red {
         background-color: #f44336;
+        color: white;
       } /* Red */
       .gray {
         background-color: #e7e7e7;
-        color: black;
       } /* Gray */
       .black {
         background-color: #555555;
+        color: white;
       } /* Black */
 
       .small {
@@ -60,6 +63,7 @@ export class FlatButton extends BaseElement {
   @property() disabled = false;
 
   render() {
+    console.log(' theme ', this.theme);
     return html`
       <button class=${this.theme} ?disabled=${this.disabled}>
         <slot></slot>
