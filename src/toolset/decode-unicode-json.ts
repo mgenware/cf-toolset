@@ -5,21 +5,18 @@ import ls from '../ls';
 import { error } from '../lib/alert';
 import BaseElement from '../common/base-element';
 
-@customElement('json-minifier')
-export default class JSONMinifier extends BaseElement {
+@customElement('decode-unicode-json')
+export default class DecodeUnicodeJSON extends BaseElement {
   @property() content = '';
   @property() input = '';
   @property() result = '';
-  exampleSrc = `{
-  "emoji": "\\uD83D\\uDE49\\uD83E\\uDD90",
-  "list": [1, 2, 3, 4]
-}`;
-  exampleDest = `{"emoji":"🙉🦐","list":[1,2,3,4]}`;
+  exampleSrc = `{ "emoji": "\\uD83D\\uDE49\\uD83E\\uDD90" }`;
+  exampleDest = `{ "emoji": "🙉🦐" }`;
 
   render() {
     return html`
       <div>
-        <h2>${ls.JSONMinifier}</h2>
+        <h2>${ls.DecodeUnicodeJSON}</h2>
         <blockquote>
           <p>${ls.examples}</p>
           <p>
@@ -30,7 +27,7 @@ export default class JSONMinifier extends BaseElement {
             ></code-view>
           </p>
           <p>
-            <kbd>${ls.minify}</kbd>
+            <kbd>${ls.decode}</kbd>
           </p>
           <p>
             <code-view
@@ -47,8 +44,8 @@ export default class JSONMinifier extends BaseElement {
           @change=${this.handleOnChange}
         ></code-editor>
 
-        <lit-button class="green" @click=${this.handleMinify}>
-          ${ls.minify}
+        <lit-button class="green" @click=${this.handleFormat}>
+          ${ls.decode}
         </lit-button>
 
         <code-view
@@ -60,9 +57,9 @@ export default class JSONMinifier extends BaseElement {
     `;
   }
 
-  private handleMinify() {
+  private handleFormat() {
     try {
-      this.result = JSON.stringify(JSON.parse(this.input), null);
+      this.result = JSON.stringify(JSON.parse(this.input), null, 2);
     } catch (ex) {
       error(ex.message);
     }

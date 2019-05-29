@@ -7,7 +7,7 @@ import plugin from 'prettier/parser-postcss';
 const plugins = [plugin];
 
 @customElement('css-formatter')
-export class CSSFormatter extends BaseElement {
+export default class CSSFormatter extends BaseElement {
   opts = {
     printWidth: 80,
     tabWidth: 2,

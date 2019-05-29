@@ -6,7 +6,7 @@ import ls from '../../ls';
 import BaseElement from '../../common/base-element';
 
 @customElement('prettier-opts')
-export class PrettierOpts extends BaseElement {
+export default class PrettierOpts extends BaseElement {
   // content will be set to initialContent upon reset button click
   @property() initialContent = '';
   @property() content = '';

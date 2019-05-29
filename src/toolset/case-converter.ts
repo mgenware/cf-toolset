@@ -6,7 +6,7 @@ import { Fx23StringReader } from 'fx23';
 import BaseElement from '../common/base-element';
 
 @customElement('case-converter')
-export class CaseConverter extends BaseElement {
+export default class CaseConverter extends BaseElement {
   @property() content = '';
   @property() input = '';
   @property() result = '';

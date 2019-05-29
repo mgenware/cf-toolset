@@ -6,10 +6,10 @@ serve({
   path: './',
   port: 8080,
   routes: [
-    new Route('/src/toolset/*', (req, res) => {
+    new Route('/src/toolset/*.ts', (req, res) => {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       const componentName = path.parse(req.url).name;
-      const html = `<html>
+      const html = `<html lang="en">
 <head>
 </head>
 <body>

@@ -4,7 +4,7 @@ import ls from '../ls';
 import BaseElement from '../common/base-element';
 
 @customElement('character-line-counter')
-export class CharacterLineCounter extends BaseElement {
+export default class CharacterLineCounter extends BaseElement {
   render() {
     return html`
       <div>

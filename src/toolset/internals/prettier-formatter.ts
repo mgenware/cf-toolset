@@ -11,7 +11,7 @@ import { formatJSONObject } from '../../lib/utils';
 import prettier from 'prettier/standalone';
 
 @customElement('prettier-formatter')
-export class PrettierFormatter extends BaseElement {
+export default class PrettierFormatter extends BaseElement {
   @property() title = '';
   @property() opts = {};
   // forcedOpts will be merged to user options

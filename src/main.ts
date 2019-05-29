@@ -6,3 +6,5 @@ import './toolset/case-converter';
 import './toolset/css-formatter';
 import './toolset/character-line-counter';
 import './toolset/color-picker-converter';
+import './toolset/decode-unicode-json';
+import './toolset/html-data-encoder-decoder';
