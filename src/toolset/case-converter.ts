@@ -30,18 +30,18 @@ export class CaseConverter extends BaseElement {
         ></code-editor>
 
         <div>
-          <flat-button @click=${this.handleUpperCase}>
+          <lit-button @click=${this.handleUpperCase}>
             ${ls.uppercaseBtn}
-          </flat-button>
-          <flat-button @click=${this.handleLowerCase}>
+          </lit-button>
+          <lit-button @click=${this.handleLowerCase}>
             ${ls.lowercaseBtn}
-          </flat-button>
-          <flat-button @click=${this.handleCapitalized}>
+          </lit-button>
+          <lit-button @click=${this.handleCapitalized}>
             ${ls.capitalizedBtn}
-          </flat-button>
-          <flat-button @click=${this.handleSentenceCase}>
+          </lit-button>
+          <lit-button @click=${this.handleSentenceCase}>
             ${ls.sentenceCaseBtn}
-          </flat-button>
+          </lit-button>
         </div>
 
         <code-view .content=${this.result} .label=${ls.output}></code-view>

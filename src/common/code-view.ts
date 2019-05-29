@@ -1,7 +1,7 @@
 import { html, customElement, property, css } from 'lit-element';
 import ls from '../ls';
 import { copyHelper } from '../lib/clipboard';
-import './flat-button';
+import 'lit-button';
 import BaseElement from './base-element';
 
 @customElement('code-view')
@@ -46,13 +46,13 @@ export class CodeView extends BaseElement {
         ${this.hideCopyButton || !this.content
           ? ''
           : html`
-              <flat-button
-                theme="gray small"
+              <lit-button
+                class="gray small"
                 @click=${this.handleCopy}
                 .disabled=${this.copyDone}
               >
                 ${this.copyDone ? ls.copied : ls.copy}
-              </flat-button>
+              </lit-button>
             `}
       </div>
     `;

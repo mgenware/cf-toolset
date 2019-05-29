@@ -1,7 +1,7 @@
 import { html, customElement, property } from 'lit-element';
 import '../../common/code-view';
 import '../../common/code-editor';
-import '../../common/flat-button';
+import 'lit-button';
 import './prettier-opts';
 import ls from '../../ls';
 import BaseElement from '../../common/base-element';
@@ -48,9 +48,9 @@ export class PrettierFormatter extends BaseElement {
           @change=${this.handleOptsChange}
         ></prettier-opts>
 
-        <flat-button theme="green" @click=${this.handleFormat}>
+        <lit-button class="green" @click=${this.handleFormat}>
           ${ls.prettify}
-        </flat-button>
+        </lit-button>
 
         <code-view
           .lang=${this.lang}

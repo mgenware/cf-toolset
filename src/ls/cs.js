@@ -42,4 +42,5 @@ window.cft_ls = {
   extract: '提取',
   JSONMinifier: 'JSON 精简化',
   minify: '精简化',
+  grayscale: '灰度',
 };

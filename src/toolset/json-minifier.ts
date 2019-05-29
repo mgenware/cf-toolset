@@ -47,9 +47,9 @@ export class JSONMinifier extends BaseElement {
           @change=${this.handleOnChange}
         ></code-editor>
 
-        <flat-button .theme="green" @click=${this.handleMinify}>
+        <lit-button class="green" @click=${this.handleMinify}>
           ${ls.minify}
-        </flat-button>
+        </lit-button>
 
         <code-view
           .lang="json"

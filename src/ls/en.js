@@ -43,4 +43,5 @@ window.cft_ls = {
   extract: 'Extract',
   JSONMinifier: 'JSON Minifier',
   minify: 'Minify',
+  grayscale: 'Grayscale',
 };

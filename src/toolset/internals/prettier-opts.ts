@@ -1,7 +1,7 @@
 import { html, customElement, property } from 'lit-element';
 import '../../common/code-view';
 import '../../common/code-editor';
-import '../../common/flat-button';
+import 'lit-button';
 import ls from '../../ls';
 import BaseElement from '../../common/base-element';
 
@@ -30,9 +30,9 @@ export class PrettierOpts extends BaseElement {
           .disableCharInfo=${true}
           @change=${this.handleChange}
         ></code-editor>
-        <flat-button .theme="small" @click=${this.handleReset}>
+        <lit-button class="small" @click=${this.handleReset}>
           ${ls.reset}
-        </flat-button>
+        </lit-button>
       </details>
     `;
   }
