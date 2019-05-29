@@ -40,7 +40,7 @@ const tasks = [
     input: entries,
     output: {
       dir: 'dist',
-      format: 'system',
+      format: 'es',
       sourcemap: true,
     },
     plugins: tsPlugins,
