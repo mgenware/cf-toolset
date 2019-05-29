@@ -13,3 +13,6 @@ import './toolset/javascript-export-all-named-imports';
 import './toolset/javascript-formatter';
 import './toolset/markdown-formatter';
 import './toolset/typescript-formatter';
+import './toolset/url-data-encoder-decoder';
+import './toolset/url-show-hide-unicode';
+import './toolset/xml-data-encoder-decoder';
