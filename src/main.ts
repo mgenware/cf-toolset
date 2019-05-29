@@ -8,3 +8,8 @@ import './toolset/character-line-counter';
 import './toolset/color-picker-converter';
 import './toolset/decode-unicode-json';
 import './toolset/html-data-encoder-decoder';
+import './toolset/json-formatter';
+import './toolset/javascript-export-all-named-imports';
+import './toolset/javascript-formatter';
+import './toolset/markdown-formatter';
+import './toolset/typescript-formatter';
