@@ -17,14 +17,30 @@ if (isProd) {
   tsPlugins.push(terser());
 }
 
+const entries = [
+  'case-converter',
+  'character-line-counter',
+  'color-picker-converter',
+  'css-formatter',
+  'decode-unicode-json',
+  'html-data-encoder-decoder',
+  'javascript-export-all-named-imports',
+  'javascript-formatter',
+  'json-formatter',
+  'json-minifier',
+  'markdown-formatter',
+  'typescript-formatter',
+  'url-data-encoder-decoder',
+  'url-show-hide-unicode',
+  'xml-data-encoder-decoder',
+].map(s => `src/toolset/${s}.ts`);
+
 const tasks = [
   {
-    input: 'src/main.ts',
+    input: entries,
     output: {
-      name: 'kangxi',
-      file: 'dist/main.js',
-      format: 'umd',
-      exports: 'named',
+      dir: 'dist',
+      format: 'system',
       sourcemap: true,
     },
     plugins: tsPlugins,
