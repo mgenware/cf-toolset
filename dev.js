@@ -14,8 +14,12 @@ serve({
 </head>
 <body>
 <${componentName}></${componentName}>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/s.min.js"></script>
 <script src="../../src/ls/en.js"></script>
-<script src="../../dist/main.js"></script>
+
+<script>
+System.import('../../dist/${componentName}.js');
+</script>
 </body>
 </html>`;
       res.end(html);
