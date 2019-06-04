@@ -5,7 +5,7 @@ import { terser } from 'rollup-plugin-terser';
 
 const isProd = process.env.NODE_ENV == 'production';
 
-const tsPlugins = [
+const plugins = [
   resolve({
     browser: true,
   }),
@@ -14,7 +14,7 @@ const tsPlugins = [
 ];
 
 if (isProd) {
-  tsPlugins.push(terser());
+  plugins.push(terser());
 }
 
 const entries = [
@@ -43,7 +43,7 @@ const tasks = [
       format: 'system',
       sourcemap: true,
     },
-    plugins: tsPlugins,
+    plugins,
   },
 ];
 
