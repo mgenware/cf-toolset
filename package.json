@@ -30,6 +30,7 @@
     "@types/prettier": "^1.16.4",
     "cross-env": "^5.2.0",
     "del-cli": "^2.0.0",
+    "fast-glob": "^2.2.7",
     "fx87": "^1.0.1",
     "open": "^6.3.0",
     "rollup": "^1.14.3",

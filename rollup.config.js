@@ -2,6 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+const fg = require('fast-glob');
 
 const isProd = process.env.NODE_ENV == 'production';
 
@@ -17,24 +18,7 @@ if (isProd) {
   plugins.push(terser());
 }
 
-const entries = [
-  'case-converter',
-  'character-line-counter',
-  'color-picker-converter',
-  'css-formatter',
-  'decode-unicode-json',
-  'html-data-encoder-decoder',
-  'javascript-export-all-named-imports',
-  'javascript-formatter',
-  'json-formatter',
-  'json-minifier',
-  'markdown-formatter',
-  'typescript-formatter',
-  'url-data-encoder-decoder',
-  'url-show-hide-unicode',
-  'xml-data-encoder-decoder',
-].map(s => `src/toolset/${s}.ts`);
-
+const entries = fg.sync(['src/toolset/*.ts']);
 const tasks = [
   {
     input: entries,
