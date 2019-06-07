@@ -43,4 +43,5 @@ window.cft_ls = {
   JSONMinifier: 'JSON 精简化',
   minify: '精简化',
   grayscale: '灰度',
+  HTMLFormatter: 'HTML 格式化/美化',
 };

@@ -44,4 +44,5 @@ window.cft_ls = {
   JSONMinifier: 'JSON Minifier',
   minify: 'Minify',
   grayscale: 'Grayscale',
+  HTMLFormatter: 'HTML Formatter/Prettifier',
 };

@@ -7,7 +7,6 @@ import ls from '../../ls';
 import BaseElement from '../../common/base-element';
 import { error } from '../../lib/alert';
 import { formatJSONObject } from '../../lib/utils';
-// tslint:disable-next-line
 import prettier from 'prettier/standalone';
 
 @customElement('prettier-formatter')
